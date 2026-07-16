@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your guide to InstructureCon 2026</title>
+<meta name="description" content="Attendee guide for InstructureCon 2026 — July 21–23, 2026, Louisville, KY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#D69129; --amber:#F9A81A; --teal:#05B7CB; --sky:#52C8EB;
+    --blue:#1D6BB5; --navy:#1F2146; --green:#20B24B; --green-dark:#0C9547;
+    --red:#ED2024; --crimson:#D42027;
+    --ink:#1F2146; --body:#2A2C3A; --muted:#6B7280; --line:#E2E4EA;
+    --surface:#F4F6F8; --white:#ffffff;
+    --maxw:760px; --pad:20px; --header-h:48px; --btn:40px; --numcol:72px;
+    --font:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; font-family:var(--font); color:var(--body);
+    background:var(--surface); line-height:1.55; -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .skip{position:absolute;left:-9999px;top:auto;background:var(--navy);color:#fff;padding:10px 14px;border-radius:8px;z-index:200;}
+  .skip:focus{left:12px;top:12px;}
+  .seg-off{display:none !important;}
+  .sec-card a:not(.ph):not(.btn-inline):not(.link){color:var(--blue);text-decoration:underline;text-underline-offset:2px;}
+  .sec-card .contact a{color:var(--blue);text-decoration:none;}
+  .sec-num{border-radius:50%; background:var(--acc,var(--teal)); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:calc(var(--numcol,48px) * 0.46); line-height:1;}
+  .sec-num.has-num-img{background-color:transparent !important; background-repeat:no-repeat; background-position:center; background-size:contain; border-radius:0;}
+  .sched .day{width:92px !important;}
+  .lou-cta{position:relative; overflow:hidden; margin-top:18px; border-radius:12px; background:linear-gradient(180deg,#faf6ef,#f1e9dc); border:1px solid var(--line); min-height:118px;}
+  .lou-cta-bg{position:absolute; right:0; top:0; bottom:0; width:46%; background-repeat:no-repeat; background-position:right bottom; background-size:contain; pointer-events:none;}
+  .lou-cta-inner{position:relative; z-index:1; padding:18px 22px; max-width:60%;}
+  .lou-cta-inner h3{margin:0 0 6px;}
+  @media(max-width:560px){ .lou-cta-inner{max-width:100%;} .lou-cta-bg{width:100%; opacity:.14;} }
+
+  /* ---------- entry gate ---------- */
+  body.gated{overflow:hidden;}
+  .gate{display:none; position:fixed; inset:0; z-index:300; background:var(--navy); color:#fff;
+    overflow:auto; align-items:center; justify-content:center; padding:32px 20px; opacity:1; transition:opacity .32s ease;}
+  .gate.closing{opacity:0;}
+  .gate-inner{max-width:720px; width:100%;}
+  .gate-strip{display:flex; height:10px; border-radius:5px; overflow:hidden; margin-bottom:26px;}
+  .gate-strip i{flex:1;}
+  .gate-logo{margin-bottom:22px;}
+  .gate-logo svg{height:24px;}
+  .gate-eyebrow{font-size:12px; font-weight:700; letter-spacing:3px; color:var(--amber); margin:0 0 8px;}
+  .gate-title{font-weight:900; font-size:clamp(28px,6vw,40px); line-height:1.05; letter-spacing:-1px; margin:0 0 10px;}
+  .gate-sub{color:rgba(255,255,255,.8); font-size:15px; max-width:52ch; margin:0 0 26px;}
+  .gate-grid{display:grid; gap:12px; grid-template-columns:1fr;}
+  .gate-card{text-align:left; cursor:pointer; background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.18); border-left:5px solid var(--c); border-radius:12px;
+    padding:16px 18px; color:#fff; font-family:var(--font); display:flex; flex-direction:column; gap:4px;
+    transition:transform .15s ease, background .15s ease, border-color .15s ease;}
+  .gate-card:hover, .gate-card:focus-visible{background:rgba(255,255,255,.12); border-color:var(--c); transform:translateY(-2px); outline:none;}
+  .gate-card-name{font-weight:800; font-size:20px; letter-spacing:-.3px;}
+  .gate-card-desc{font-size:13px; color:rgba(255,255,255,.75);}
+  .gate-go{margin-top:6px; font-weight:700; font-size:12px; letter-spacing:.5px; color:var(--c);}
+  @media (min-width:640px){ .gate-grid{grid-template-columns:1fr 1fr;} }
+
+  /* brand wordmark (monochrome svg, recolored white on dark) */
+  .brandmark svg{height:18px; width:auto; display:block;}
+  .brandmark path{fill:#fff;}
+  .brandmark svg{height:15px;}
+  .brand-lockup{display:flex; flex-direction:column; align-items:flex-start; gap:2px; line-height:1;}
+  .brand-tag{color:var(--red); font-weight:700; letter-spacing:2px; font-size:9px; text-transform:uppercase;}
+  .io-pill{display:flex; align-items:center; height:var(--btn); border:1px solid rgba(255,255,255,.35); border-radius:24px; overflow:hidden;}
+  .io-btn{width:var(--btn); height:var(--btn); display:grid; place-items:center; background:transparent; border:0; color:#fff; cursor:pointer; padding:0;}
+  .io-btn:hover{background:rgba(255,255,255,.12);}
+  .io-btn svg{width:18px; height:18px;}
+  .io-div{width:1px; height:52%; background:rgba(255,255,255,.3);}
+  .ver-short{display:none;}
+  .toc-actions{display:none;}
+  .toc-action{display:flex; align-items:center; gap:10px; width:100%; cursor:pointer; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); color:#fff; border-radius:10px; padding:13px 16px; font:700 14px/1 var(--font);}
+  .toc-action svg{width:18px; height:18px;}
+  a.ph{display:block; text-decoration:none;}
+  .support-ph{margin:22px 0 0;}
+  .support-ph span{display:grid; place-items:center; min-height:120px; padding:16px; border:1.5px dashed var(--line); border-radius:12px; color:var(--muted); font:700 11px/1.5 var(--font); letter-spacing:1px; text-align:center; background:var(--surface);}
+  @media (max-width:767px){ .io-pill{display:none;} .toc-actions{display:flex; flex-direction:column; gap:10px; margin-bottom:20px;} .ver-full{display:none;} .ver-short{display:inline;} }
+  @media (min-width:768px){ :root{--header-h:72px; --btn:48px; --numcol:96px;} .brandmark svg{height:26px;} .brand-tag{font-size:10px;} section{column-gap:28px;} }
+  @media (min-width:992px){ :root{--numcol:120px;} section{column-gap:40px;} .brand-lockup{flex-direction:row; align-items:center; gap:14px;} .brand-tag{font-size:12px; letter-spacing:3px;} }
+
+  /* ---------- sticky header ---------- */
+  .site-header{
+    position:sticky; top:0; z-index:100; height:var(--header-h);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 var(--pad); background:rgba(31,33,70,.97); color:#fff;
+    backdrop-filter:saturate(140%) blur(6px);
+  }
+  .toc-btn{
+    display:inline-flex; align-items:center; gap:7px; cursor:pointer;
+    background:transparent; color:#fff; border:1px solid rgba(255,255,255,.35);
+    border-radius:20px; padding:7px 14px; font:600 13px/1 var(--font);
+  }
+  .toc-btn:hover{background:rgba(255,255,255,.1);}
+  .toc-btn svg{width:14px;height:14px;}
+  .toc-btn .ic-close{display:none;}
+  .toc-btn[aria-expanded="true"] .ic-menu{display:none;}
+  .toc-btn[aria-expanded="true"] .ic-close{display:block;}
+  .header-actions{display:flex; align-items:center; gap:10px;}
+  .toc-txt{display:none;}
+  .verpick{position:relative;}
+  .ver-btn{display:inline-flex; align-items:center; gap:6px; cursor:pointer; color:#fff;
+    background:transparent; border:1px solid rgba(255,255,255,.35); border-radius:20px;
+    padding:0 12px 0 16px; height:var(--btn); border-radius:24px; font:700 13px/1 var(--font); white-space:nowrap;}
+  .ver-btn:hover{background:rgba(255,255,255,.1);}
+  .ver-btn .caret{width:14px; height:14px; transition:transform .18s ease;}
+  .verpick.open .ver-btn .caret{transform:rotate(180deg);}
+  .ver-menu{position:absolute; top:calc(100% + 8px); right:0; min-width:222px; background:#fff;
+    border-radius:12px; padding:6px; box-shadow:0 14px 34px rgba(0,0,0,.28); display:none; z-index:120;}
+  .verpick.open .ver-menu{display:block;}
+  .ver-opt{display:block; width:100%; text-align:left; cursor:pointer; border:0; background:transparent;
+    padding:11px 12px; border-radius:8px; font:600 14px/1.2 var(--font); color:var(--ink);}
+  .ver-opt:hover{background:var(--surface);}
+  .ver-opt.on{background:var(--navy); color:#fff;}
+  .toc-btn{width:var(--btn); height:var(--btn); padding:0; justify-content:center; border-radius:50%;}
+
+
+  /* ---------- contents overlay ---------- */
+  .toc{
+    position:fixed; inset:var(--header-h) 0 0 0; z-index:90;
+    background:rgba(31,33,70,.98); color:#fff; padding:24px var(--pad) 40px;
+    overflow:auto; transform:translateY(-8px); opacity:0; pointer-events:none;
+    transition:opacity .18s ease, transform .18s ease;
+  }
+  .toc.open{opacity:1; transform:none; pointer-events:auto;}
+  .toc h2{font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--amber); margin:0 0 14px;}
+  .toc ol{list-style:none; margin:0 auto; padding:0; counter-reset:c; max-width:var(--maxw);}
+  .toc li{counter-increment:c; border-bottom:1px solid rgba(255,255,255,.14);}
+  .toc a{display:flex; align-items:center; gap:14px; padding:14px 2px; color:#fff; text-decoration:none; font-weight:600; font-size:17px;}
+  .toc a::before{content:counter(c,decimal-leading-zero); font-size:12px; font-weight:700; color:var(--teal); min-width:24px;}
+  .toc a:hover{color:var(--sky);}
+
+  /* ---------- cover / hero ---------- */
+  .hero{position:relative; display:flex; flex-direction:column; background:#A4DDD6; color:var(--body); overflow:hidden;}
+  .herofig{order:2; background:transparent; line-height:0; margin-top:6px;}
+  .herofig svg{display:block; width:100%; height:auto; max-width:var(--maxw); margin:0 auto;}
+  .hero-body{order:1; width:100%; padding:40px var(--pad) 24px; max-width:var(--maxw); margin-inline:auto;}
+  .cover-logo{margin-bottom:16px;}
+  .cover-logo svg{height:22px;}
+  .eyebrow{font-size:12px; font-weight:700; letter-spacing:3px; color:var(--red); margin:0 0 8px;}
+  .hero h1{font-weight:900; font-size:clamp(28px,6.4vw,44px); line-height:1.02; letter-spacing:-1.2px; margin:0; color:var(--navy);}
+  .rule{width:64px; height:6px; background:var(--red); border-radius:3px; margin:16px 0;}
+  .lead{font-size:15px; color:var(--body); max-width:52ch; margin:0 0 22px;}
+  .meta{display:inline-flex; gap:10px; align-items:center; background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2); border-radius:8px; padding:9px 14px; font-weight:600; font-size:13px; margin-bottom:20px;}
+
+  /* segment switcher */
+  .switch-label{font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.6); margin:0 0 8px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{cursor:pointer; background:transparent; color:rgba(255,255,255,.85);
+    border:1px solid rgba(255,255,255,.4); border-radius:20px; padding:8px 14px;
+    font:600 12px/1 var(--font); letter-spacing:.4px; transition:all .15s ease;}
+  .chip:hover{border-color:#fff; color:#fff;}
+  .chip.on{background:#fff; color:var(--navy); border-color:#fff;}
+
+  /* ---------- toolbar (cover actions) ---------- */
+  .toolbar{display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 4px;}
+  .btn{display:inline-flex; align-items:center; gap:8px; cursor:pointer;
+    border:0; border-radius:9px; padding:12px 18px; font:700 14px/1 var(--font); text-decoration:none;}
+  .btn svg{width:16px; height:16px;}
+  .btn-primary{background:var(--red); color:#fff;}
+  .btn-primary:hover{background:#cf1a1e;}
+  .btn-ghost{background:#fff; color:var(--navy); border:1px solid var(--navy);}
+  .btn-ghost:hover{background:rgba(31,33,70,.06);}
+  .hint{font-size:12px; color:var(--body); opacity:.72; margin:12px 0 2px;}
+
+  /* ---------- content ---------- */
+  main{max-width:var(--maxw); margin-inline:auto; padding:8px var(--pad) 60px; counter-reset:secnum;}
+  section{position:relative; padding-top:44px; padding-bottom:88px; scroll-margin-top:calc(var(--header-h) + 12px); counter-increment:secnum;}
+  .sec-bg{position:absolute; left:0; right:0; bottom:0; height:230px; z-index:0;  background-repeat:no-repeat; background-position:right bottom; background-size:100% auto; pointer-events:none;}
+
+  .sec-head{position:relative; z-index:1; display:flex; align-items:center; gap:20px; margin:0 0 18px;}
+  .sec-num{flex:0 0 auto; width:var(--numcol,48px); height:var(--numcol,48px); background-repeat:no-repeat; background-position:center; background-size:contain;}
+  /* .sec-num image is set per visible section in JS (assets/section-number-NN.png) */
+  h2.sec-title{font-weight:800; font-size:clamp(22px,5vw,28px); letter-spacing:-.5px; color:var(--ink); margin:0;}
+  .sec-card{position:relative; z-index:1; background:rgba(255,255,255,.82); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); border:1px solid rgba(255,255,255,.7); border-radius:16px; padding:22px 24px; box-shadow:0 12px 30px rgba(31,33,70,.07);}
+  @media (min-width:768px){ .sec-card{margin-left:calc(var(--numcol) + 20px); padding:30px 34px;} section{padding-bottom:110px;} }
+  h3{font-weight:700; font-size:16px; color:var(--ink); margin:22px 0 8px;}
+  p{margin:0 0 12px; font-size:15px;}
+  .muted{color:var(--muted); font-size:13.5px;}
+  a.link{color:var(--teal); font-weight:600; text-decoration:none;}
+  a.link:hover{text-decoration:underline;}
+  ul.plain{list-style:none; margin:0 0 12px; padding:0;}
+  ul.plain li{position:relative; padding:5px 0 5px 20px; font-size:14.5px;}
+  ul.plain li::before{content:""; position:absolute; left:0; top:12px; width:9px; height:9px; border-radius:50%; background:var(--teal);}
+  ol.steps{list-style:none; counter-reset:s; margin:0 0 12px; padding:0;}
+  ol.steps li{counter-increment:s; position:relative; padding:7px 0 7px 40px; font-size:14.5px;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:6px; width:26px; height:26px; border-radius:50%; background:var(--amber); color:#fff; font-weight:700; font-size:13px; display:grid; place-items:center;}
+
+  .card{background:var(--surface); border-radius:12px; padding:18px; margin:6px 0 14px;}
+  .card.dark{background:var(--navy); color:#fff;}
+  .kicker{font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; margin:0 0 8px;}
+  .contact{display:flex; justify-content:space-between; gap:12px; padding:9px 0; border-bottom:1px solid var(--line); font-size:14px;}
+  .contact:last-child{border-bottom:0;}
+  .contact b{color:var(--ink);}
+  .contact a{color:var(--teal); font-weight:600; text-decoration:none; white-space:nowrap;}
+  .btn-inline{display:inline-flex; margin-top:6px; background:var(--red); color:#fff; border-radius:8px; padding:10px 16px; font:700 13px/1 var(--font); text-decoration:none;}
+
+  /* meal schedule */
+  .sched{background:var(--surface); border-radius:12px; overflow:hidden; margin:6px 0 14px;}
+  .sched .sched-head{background:var(--navy); color:#fff; padding:11px 16px; font-weight:700; font-size:12px; letter-spacing:3px;}
+  .sched .row{display:flex; gap:12px; align-items:center; padding:11px 16px;}
+  .sched .row:nth-child(even){background:#fff;}
+  .sched .dot{flex:0 0 auto; width:10px; height:10px; border-radius:50%;}
+  .sched .day{flex:0 0 auto; width:46px; font-weight:700; color:var(--ink); font-size:14px;}
+  .sched .meals{font-size:13.5px; color:var(--body);}
+
+  /* party cards */
+  .party-grid{display:grid; gap:12px; grid-template-columns:1fr;}
+  .party{background:var(--surface); border-radius:12px; overflow:hidden;}
+  .party .top{padding:12px 14px; color:#fff;}
+  .party .top .d{font-weight:900; font-size:18px; letter-spacing:.5px;}
+  .party .top .t{font-size:11px; font-weight:600; opacity:.92;}
+  .party .bot{padding:12px 14px;}
+  .party .bot .n{font-weight:700; color:var(--ink); font-size:14px;}
+  .party .bot .v{font-size:13px; color:var(--body);}
+  .party .bot .dr{font-size:12px; font-weight:600; margin-top:3px;}
+
+  /* placeholders */
+  .ph{position:relative; background:var(--surface); border:1.5px solid var(--navy); border-radius:10px; aspect-ratio:16/9; overflow:hidden;
+    background-image:linear-gradient(45deg,transparent 49.5%,var(--line) 49.5% 50.5%,transparent 50.5%), linear-gradient(-45deg,transparent 49.5%,var(--line) 49.5% 50.5%,transparent 50.5%);}
+  .ph .tag{position:absolute; top:12px; left:12px; color:#fff; font:700 10px/1 var(--font); letter-spacing:2px; padding:5px 10px; border-radius:6px;}
+  .map-grid{display:grid; gap:12px; grid-template-columns:1fr;}
+
+  /* feature list */
+  .feat{display:flex; gap:12px; align-items:center; background:var(--surface); border-radius:10px; padding:12px 14px; margin-bottom:10px;}
+  .feat .ic{flex:0 0 auto; width:40px; height:40px; border-radius:8px; background:#fff; border:1.5px solid var(--blue); display:grid; place-items:center;
+    font:700 6px/1 var(--font); letter-spacing:2px; color:var(--blue); background-image:linear-gradient(-45deg,transparent 48%,var(--line) 48% 52%,transparent 52%);}
+  .feat .ic span{margin-top:11px;}
+  .feat .ft{font-weight:700; color:var(--ink); font-size:14px;}
+  .feat .fd{font-size:12.5px; color:var(--body);}
+
+  /* checklist */
+  .checklist{list-style:none; margin:0; padding:0; display:grid; gap:10px; grid-template-columns:1fr;}
+  .checklist li{display:flex; gap:11px; align-items:center; font-weight:600; font-size:14px;}
+  .checklist .box{flex:0 0 auto; width:17px; height:17px; border-radius:4px; border:2px solid var(--teal);}
+  .signoff{font-weight:700; color:var(--teal); margin-top:14px;}
+
+  footer{background:var(--navy); color:rgba(255,255,255,.75); text-align:center; padding:26px var(--pad);}
+  footer .brandmark{display:flex; justify-content:center; margin-bottom:8px;}
+  footer .brandmark svg{height:22px;}
+  footer .u{font-size:12.5px;}
+
+  /* ---------- desktop ---------- */
+  @media (min-width:760px){
+    .party-grid{grid-template-columns:repeat(3,1fr);}
+    .map-grid{grid-template-columns:1fr 1fr;}
+    .feat-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+    .feat-grid .feat{margin-bottom:0;}
+    .checklist{grid-template-columns:1fr 1fr;}
+    .two-col{display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start;}
+  }
+
+  /* ---------- print ---------- */
+  @media print{
+    :root{--header-h:0px;}
+    .gate, .site-header, .toc, .toolbar, .hint, .toc-btn, .switch-label, .chips{display:none !important;}
+    html{scroll-behavior:auto;}
+    body{color:#000;}
+    .hero{color:var(--body);}
+    section{page-break-inside:avoid; padding-top:22px;}
+    .card, .sched, .party, .ph, .feat{page-break-inside:avoid;}
+    main{max-width:none;}
+    *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    @page{margin:14mm;}
+  }
+</style>
+</head>
+<body data-segment="general">
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-inner">
+    <div class="gate-strip" aria-hidden="true"><i style="background:var(--teal)"></i><i style="background:var(--amber)"></i><i style="background:var(--red)"></i><i style="background:var(--blue)"></i><i style="background:var(--green)"></i><i style="background:var(--crimson)"></i></div>
+    <div class="brandmark gate-logo" aria-label="InstructureCon 26"><svg viewBox="0 0 366 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 38.0493V0.789062H3.35791V38.0493H0Z" fill="#061C30"/>
+<path d="M13.6307 38.0494H10.4863V12.9829H13.5276V16.9761C14.8899 14.2968 17.8281 12.3481 21.6573 12.3481C27.5262 12.3481 30.516 16.5554 30.516 21.7001V38.042H27.3716V22.2242C27.3716 18.2826 25.4349 15.1825 20.6116 15.1825C16.3111 15.1825 13.6381 18.8067 13.6381 23.0656V38.042L13.6307 38.0494Z" fill="#061C30"/>
+<path d="M37.0687 30.4763C37.54 33.5248 39.8449 35.9975 43.9392 35.9975C47.032 35.9975 49.4989 34.1595 49.4989 31.5318C49.4989 29.2215 47.923 27.9593 45.2499 27.3246L41.2146 26.3798C37.5474 25.5383 35.0805 23.3313 35.0805 19.7072C35.0805 15.6623 38.9612 12.3481 43.5194 12.3481C49.3369 12.3481 51.8038 15.8173 52.4812 18.8141L49.7051 19.8622C49.2338 17.4485 47.5033 15.0792 43.5194 15.0792C40.6917 15.0792 38.1733 16.8654 38.1733 19.4931C38.1733 21.6484 39.5356 22.9106 42.1056 23.4864L46.0894 24.3795C50.2279 25.3243 52.5917 27.6936 52.5917 31.3178C52.5917 34.9419 49.4473 38.7285 43.8876 38.7285C37.7535 38.7285 34.6607 34.7869 34.1895 31.4728L37.0761 30.4763H37.0687Z" fill="#061C30"/>
+<path d="M62.0269 12.9837H68.5291V15.8254H62.0269V30.9568C62.0269 34.0053 63.4407 35.4741 66.2758 35.4741C67.1668 35.4741 68.0578 35.2601 68.5291 35.0534V37.8361C68.1094 38.0502 66.9533 38.3085 65.4363 38.3085C61.4009 38.3085 58.8825 35.8358 58.8825 31.2668V15.818H53.5879V12.9763H55.473C57.9399 12.9763 58.9856 11.8691 58.9856 9.30045V5.0415H62.0269V12.9763V12.9837Z" fill="#061C30"/>
+<path d="M84.5207 16.238C83.9463 16.083 83.1584 15.9722 82.3189 15.9722C78.07 15.9722 74.9256 18.7033 74.9256 24.4311V38.042H71.7812V12.9829H74.8741V17.6625C76.391 14.1934 79.2776 12.6729 82.584 12.6729C83.4235 12.6729 84.1009 12.7762 84.5207 12.9386V16.2527V16.238Z" fill="#061C30"/>
+<path d="M96.1132 38.729C89.7656 38.729 86.7832 33.9977 86.7832 28.7423V12.9761H89.9276V28.2182C89.9276 32.2114 91.7612 35.8873 96.6876 35.8873C101.143 35.8873 103.764 32.4698 103.764 28.2699V12.9761H106.909V33.2596C106.909 35.1491 107.063 36.9354 107.225 38.0426H104.236C104.132 37.5185 103.97 36.1013 103.97 34.5217V34.1527C102.814 36.5737 100.038 38.7216 96.1058 38.7216L96.1132 38.729Z" fill="#061C30"/>
+<path d="M114.412 25.5387C114.412 31.9012 118.499 35.8945 123.536 35.8945C128.573 35.8945 130.826 32.5286 131.665 29.7459L134.442 30.9048C133.234 34.7947 129.567 38.7362 123.536 38.7362C116.459 38.7362 111.268 33.2151 111.268 25.546C111.268 17.877 116.511 12.3042 123.536 12.3042C129.515 12.3042 133.079 15.98 134.228 20.1873L131.452 21.3461C130.612 18.4011 128.359 15.146 123.536 15.146C118.712 15.146 114.412 19.0875 114.412 25.5534V25.5387Z" fill="#061C30"/>
+<path d="M143.455 12.9837H149.957V15.8254H143.455V30.9568C143.455 34.0053 144.868 35.4741 147.704 35.4741C148.595 35.4741 149.486 35.2601 149.957 35.0534V37.8361C149.537 38.0502 148.381 38.3085 146.864 38.3085C142.829 38.3085 140.31 35.8358 140.31 31.2668V15.818H135.016V12.9763H136.901C139.368 12.9763 140.413 11.8691 140.413 9.30045V5.0415H143.455V12.9763V12.9837Z" fill="#061C30"/>
+<path d="M162.225 38.729C155.877 38.729 152.895 33.9977 152.895 28.7423V12.9761H156.039V28.2182C156.039 32.2114 157.872 35.8873 162.799 35.8873C167.254 35.8873 169.876 32.4698 169.876 28.2699V12.9761H173.02V33.2596C173.02 35.1491 173.175 36.9354 173.337 38.0426H170.347C170.244 37.5185 170.082 36.1013 170.082 34.5217V34.1527C168.926 36.5737 166.149 38.7216 162.217 38.7216L162.225 38.729Z" fill="#061C30"/>
+<path d="M191.849 16.238C191.274 16.083 190.487 15.9722 189.647 15.9722C185.398 15.9722 182.254 18.7033 182.254 24.4311V38.042H179.109V12.9829H182.202V17.6625C183.719 14.1934 186.606 12.6729 189.912 12.6729C190.752 12.6729 191.429 12.7762 191.849 12.9386V16.2527V16.238Z" fill="#061C30"/>
+<path d="M215.083 30.9564C213.67 35.2154 209.892 38.7362 204.126 38.7362C197.521 38.7362 191.961 33.8499 191.961 25.4427C191.961 17.5596 197.307 12.3042 203.544 12.3042C210.938 12.3042 215.186 17.5596 215.238 24.9703C215.238 25.391 215.238 25.7084 215.186 26.1292H195.157V26.3432C195.208 32.1227 199.192 35.9092 204.119 35.9092C208.625 35.9092 211.247 33.2815 212.3 29.9674L215.076 30.9638L215.083 30.9564ZM211.932 23.4941C211.829 18.8144 208.839 15.1386 203.596 15.1386C198.927 15.1386 195.577 18.8661 195.26 23.4941H211.932Z" fill="#061C30"/>
+<path d="M217.91 19.4417C217.91 6.98967 226.982 0.103027 236.106 0.103027C244.442 0.103027 250.369 4.88603 252.093 11.9793L249.103 13.0275C247.638 6.93062 242.814 3.14407 236.098 3.14407C228.499 3.14407 221.26 8.76854 221.26 19.4343C221.26 30.1002 228.499 35.6729 236.098 35.6729C243.072 35.6729 247.844 31.4657 249.361 25.6345L252.247 26.6827C250.465 33.6726 244.486 38.714 236.098 38.714C226.871 38.714 217.902 31.879 217.902 19.427L217.91 19.4417Z" fill="#061C30"/>
+<path d="M254.406 25.5383C254.406 17.6552 259.804 12.3481 266.829 12.3481C273.854 12.3481 279.252 17.6552 279.252 25.5383C279.252 33.4214 273.803 38.7285 266.829 38.7285C259.855 38.7285 254.406 33.3698 254.406 25.5383ZM266.836 35.8941C271.763 35.8941 276.063 32.0559 276.063 25.5383C276.063 19.0207 271.763 15.1825 266.836 15.1825C261.91 15.1825 257.61 18.9691 257.61 25.5383C257.61 32.1076 261.91 35.8941 266.836 35.8941Z" fill="#061C30"/>
+<path d="M286.705 38.0494H283.561V12.9829H286.602V16.9761C287.964 14.2968 290.902 12.3481 294.731 12.3481C300.6 12.3481 303.59 16.5554 303.59 21.7001V38.042H300.446V22.2242C300.446 18.2826 298.509 15.1825 293.686 15.1825C289.385 15.1825 286.712 18.8067 286.712 23.0656V38.042L286.705 38.0494Z" fill="#061C30"/>
+<path d="M307.992 13.98C307.889 13.4559 307.837 12.7694 307.837 12.142C307.837 5.7278 312.609 0 320.893 0C329.178 0 333.633 5.30707 333.633 11.5589C333.633 16.4453 330.908 20.3868 326.608 23.0662L319.318 27.6868C317.381 28.8973 315.754 30.3145 315.231 32.3665H333.846V38.0426H307.477C307.58 31.7908 309.885 27.0077 316.284 22.9629L322.418 19.0213C325.776 16.9177 327.293 14.4524 327.293 11.6623C327.293 8.45883 325.142 5.51374 320.739 5.51374C316.335 5.51374 313.979 8.71718 313.979 12.7104C313.979 13.2861 314.082 13.9209 314.133 14.5483L307.999 13.9726L307.992 13.98Z" fill="#061C30"/>
+<path d="M362.315 7.09369C360.85 6.35557 358.486 5.57317 355.813 5.57317C348.42 5.57317 343.545 10.7252 342.97 18.0843C344.436 15.7223 347.742 13.5153 352.565 13.5153C359.959 13.5153 365.202 18.195 365.202 26.0781C365.202 33.9612 358.862 38.8475 351.306 38.8475C343.751 38.8475 336.682 33.6438 336.682 21.7158C336.682 8.05324 345.018 0.0151367 356.188 0.0151367C359.598 0.0151367 362.477 0.856591 364.105 2.01544L362.323 7.11583L362.315 7.09369ZM351.299 33.474C355.386 33.474 358.898 30.743 358.898 26.115C358.898 21.487 355.386 18.756 351.299 18.756C347.212 18.756 343.751 21.487 343.751 26.115C343.751 30.743 347.418 33.474 351.299 33.474Z" fill="#061C30"/>
+</svg></div>
+    <p class="gate-eyebrow">ATTENDEE GUIDE &middot; 2026</p>
+    <h1 class="gate-title" id="gateTitle">Which guide is right for you?</h1>
+    <p class="gate-sub">Pick your version to see the sessions, spotlights, and tips tailored to you. You can switch anytime once you&rsquo;re in.</p>
+    <div class="gate-grid">
+      <button class="gate-card" data-set="general" style="--c:var(--teal)"><span class="gate-card-name">General</span><span class="gate-card-desc">The full experience for every attendee</span><span class="gate-go">Open guide &rarr;</span></button>
+      <button class="gate-card" data-set="highered" style="--c:var(--blue)"><span class="gate-card-name">Higher Ed</span><span class="gate-card-desc">Student success and AI on campus</span><span class="gate-go">Open guide &rarr;</span></button>
+      <button class="gate-card" data-set="bizgov" style="--c:var(--amber)"><span class="gate-card-name">Business &amp; Government</span><span class="gate-card-desc">Workforce development and training at scale</span><span class="gate-go">Open guide &rarr;</span></button>
+      <button class="gate-card" data-set="k12" style="--c:var(--crimson)"><span class="gate-card-name">K&ndash;12</span><span class="gate-card-desc">Classroom ideas and district strategy</span><span class="gate-go">Open guide &rarr;</span></button>
+    </div>
+  </div>
+</div>
+<a class="skip" href="#welcome">Skip to content</a>
+
+<header class="site-header">
+  <div class="brand-lockup">
+  <div class="brandmark" aria-label="InstructureCon 26"><svg viewBox="0 0 366 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 38.0493V0.789062H3.35791V38.0493H0Z" fill="#061C30"/>
+<path d="M13.6307 38.0494H10.4863V12.9829H13.5276V16.9761C14.8899 14.2968 17.8281 12.3481 21.6573 12.3481C27.5262 12.3481 30.516 16.5554 30.516 21.7001V38.042H27.3716V22.2242C27.3716 18.2826 25.4349 15.1825 20.6116 15.1825C16.3111 15.1825 13.6381 18.8067 13.6381 23.0656V38.042L13.6307 38.0494Z" fill="#061C30"/>
+<path d="M37.0687 30.4763C37.54 33.5248 39.8449 35.9975 43.9392 35.9975C47.032 35.9975 49.4989 34.1595 49.4989 31.5318C49.4989 29.2215 47.923 27.9593 45.2499 27.3246L41.2146 26.3798C37.5474 25.5383 35.0805 23.3313 35.0805 19.7072C35.0805 15.6623 38.9612 12.3481 43.5194 12.3481C49.3369 12.3481 51.8038 15.8173 52.4812 18.8141L49.7051 19.8622C49.2338 17.4485 47.5033 15.0792 43.5194 15.0792C40.6917 15.0792 38.1733 16.8654 38.1733 19.4931C38.1733 21.6484 39.5356 22.9106 42.1056 23.4864L46.0894 24.3795C50.2279 25.3243 52.5917 27.6936 52.5917 31.3178C52.5917 34.9419 49.4473 38.7285 43.8876 38.7285C37.7535 38.7285 34.6607 34.7869 34.1895 31.4728L37.0761 30.4763H37.0687Z" fill="#061C30"/>
+<path d="M62.0269 12.9837H68.5291V15.8254H62.0269V30.9568C62.0269 34.0053 63.4407 35.4741 66.2758 35.4741C67.1668 35.4741 68.0578 35.2601 68.5291 35.0534V37.8361C68.1094 38.0502 66.9533 38.3085 65.4363 38.3085C61.4009 38.3085 58.8825 35.8358 58.8825 31.2668V15.818H53.5879V12.9763H55.473C57.9399 12.9763 58.9856 11.8691 58.9856 9.30045V5.0415H62.0269V12.9763V12.9837Z" fill="#061C30"/>
+<path d="M84.5207 16.238C83.9463 16.083 83.1584 15.9722 82.3189 15.9722C78.07 15.9722 74.9256 18.7033 74.9256 24.4311V38.042H71.7812V12.9829H74.8741V17.6625C76.391 14.1934 79.2776 12.6729 82.584 12.6729C83.4235 12.6729 84.1009 12.7762 84.5207 12.9386V16.2527V16.238Z" fill="#061C30"/>
+<path d="M96.1132 38.729C89.7656 38.729 86.7832 33.9977 86.7832 28.7423V12.9761H89.9276V28.2182C89.9276 32.2114 91.7612 35.8873 96.6876 35.8873C101.143 35.8873 103.764 32.4698 103.764 28.2699V12.9761H106.909V33.2596C106.909 35.1491 107.063 36.9354 107.225 38.0426H104.236C104.132 37.5185 103.97 36.1013 103.97 34.5217V34.1527C102.814 36.5737 100.038 38.7216 96.1058 38.7216L96.1132 38.729Z" fill="#061C30"/>
+<path d="M114.412 25.5387C114.412 31.9012 118.499 35.8945 123.536 35.8945C128.573 35.8945 130.826 32.5286 131.665 29.7459L134.442 30.9048C133.234 34.7947 129.567 38.7362 123.536 38.7362C116.459 38.7362 111.268 33.2151 111.268 25.546C111.268 17.877 116.511 12.3042 123.536 12.3042C129.515 12.3042 133.079 15.98 134.228 20.1873L131.452 21.3461C130.612 18.4011 128.359 15.146 123.536 15.146C118.712 15.146 114.412 19.0875 114.412 25.5534V25.5387Z" fill="#061C30"/>
+<path d="M143.455 12.9837H149.957V15.8254H143.455V30.9568C143.455 34.0053 144.868 35.4741 147.704 35.4741C148.595 35.4741 149.486 35.2601 149.957 35.0534V37.8361C149.537 38.0502 148.381 38.3085 146.864 38.3085C142.829 38.3085 140.31 35.8358 140.31 31.2668V15.818H135.016V12.9763H136.901C139.368 12.9763 140.413 11.8691 140.413 9.30045V5.0415H143.455V12.9763V12.9837Z" fill="#061C30"/>
+<path d="M162.225 38.729C155.877 38.729 152.895 33.9977 152.895 28.7423V12.9761H156.039V28.2182C156.039 32.2114 157.872 35.8873 162.799 35.8873C167.254 35.8873 169.876 32.4698 169.876 28.2699V12.9761H173.02V33.2596C173.02 35.1491 173.175 36.9354 173.337 38.0426H170.347C170.244 37.5185 170.082 36.1013 170.082 34.5217V34.1527C168.926 36.5737 166.149 38.7216 162.217 38.7216L162.225 38.729Z" fill="#061C30"/>
+<path d="M191.849 16.238C191.274 16.083 190.487 15.9722 189.647 15.9722C185.398 15.9722 182.254 18.7033 182.254 24.4311V38.042H179.109V12.9829H182.202V17.6625C183.719 14.1934 186.606 12.6729 189.912 12.6729C190.752 12.6729 191.429 12.7762 191.849 12.9386V16.2527V16.238Z" fill="#061C30"/>
+<path d="M215.083 30.9564C213.67 35.2154 209.892 38.7362 204.126 38.7362C197.521 38.7362 191.961 33.8499 191.961 25.4427C191.961 17.5596 197.307 12.3042 203.544 12.3042C210.938 12.3042 215.186 17.5596 215.238 24.9703C215.238 25.391 215.238 25.7084 215.186 26.1292H195.157V26.3432C195.208 32.1227 199.192 35.9092 204.119 35.9092C208.625 35.9092 211.247 33.2815 212.3 29.9674L215.076 30.9638L215.083 30.9564ZM211.932 23.4941C211.829 18.8144 208.839 15.1386 203.596 15.1386C198.927 15.1386 195.577 18.8661 195.26 23.4941H211.932Z" fill="#061C30"/>
+<path d="M217.91 19.4417C217.91 6.98967 226.982 0.103027 236.106 0.103027C244.442 0.103027 250.369 4.88603 252.093 11.9793L249.103 13.0275C247.638 6.93062 242.814 3.14407 236.098 3.14407C228.499 3.14407 221.26 8.76854 221.26 19.4343C221.26 30.1002 228.499 35.6729 236.098 35.6729C243.072 35.6729 247.844 31.4657 249.361 25.6345L252.247 26.6827C250.465 33.6726 244.486 38.714 236.098 38.714C226.871 38.714 217.902 31.879 217.902 19.427L217.91 19.4417Z" fill="#061C30"/>
+<path d="M254.406 25.5383C254.406 17.6552 259.804 12.3481 266.829 12.3481C273.854 12.3481 279.252 17.6552 279.252 25.5383C279.252 33.4214 273.803 38.7285 266.829 38.7285C259.855 38.7285 254.406 33.3698 254.406 25.5383ZM266.836 35.8941C271.763 35.8941 276.063 32.0559 276.063 25.5383C276.063 19.0207 271.763 15.1825 266.836 15.1825C261.91 15.1825 257.61 18.9691 257.61 25.5383C257.61 32.1076 261.91 35.8941 266.836 35.8941Z" fill="#061C30"/>
+<path d="M286.705 38.0494H283.561V12.9829H286.602V16.9761C287.964 14.2968 290.902 12.3481 294.731 12.3481C300.6 12.3481 303.59 16.5554 303.59 21.7001V38.042H300.446V22.2242C300.446 18.2826 298.509 15.1825 293.686 15.1825C289.385 15.1825 286.712 18.8067 286.712 23.0656V38.042L286.705 38.0494Z" fill="#061C30"/>
+<path d="M307.992 13.98C307.889 13.4559 307.837 12.7694 307.837 12.142C307.837 5.7278 312.609 0 320.893 0C329.178 0 333.633 5.30707 333.633 11.5589C333.633 16.4453 330.908 20.3868 326.608 23.0662L319.318 27.6868C317.381 28.8973 315.754 30.3145 315.231 32.3665H333.846V38.0426H307.477C307.58 31.7908 309.885 27.0077 316.284 22.9629L322.418 19.0213C325.776 16.9177 327.293 14.4524 327.293 11.6623C327.293 8.45883 325.142 5.51374 320.739 5.51374C316.335 5.51374 313.979 8.71718 313.979 12.7104C313.979 13.2861 314.082 13.9209 314.133 14.5483L307.999 13.9726L307.992 13.98Z" fill="#061C30"/>
+<path d="M362.315 7.09369C360.85 6.35557 358.486 5.57317 355.813 5.57317C348.42 5.57317 343.545 10.7252 342.97 18.0843C344.436 15.7223 347.742 13.5153 352.565 13.5153C359.959 13.5153 365.202 18.195 365.202 26.0781C365.202 33.9612 358.862 38.8475 351.306 38.8475C343.751 38.8475 336.682 33.6438 336.682 21.7158C336.682 8.05324 345.018 0.0151367 356.188 0.0151367C359.598 0.0151367 362.477 0.856591 364.105 2.01544L362.323 7.11583L362.315 7.09369ZM351.299 33.474C355.386 33.474 358.898 30.743 358.898 26.115C358.898 21.487 355.386 18.756 351.299 18.756C347.212 18.756 343.751 21.487 343.751 26.115C343.751 30.743 347.418 33.474 351.299 33.474Z" fill="#061C30"/>
+</svg></div>
+  <span class="brand-tag">Attendee Guide</span>
+  </div>
+  <div class="header-actions">
+    <div class="verpick">
+      <button class="ver-btn" id="verBtn" aria-haspopup="true" aria-expanded="false"><span class="ver-full" id="verFull">General</span><span class="ver-short" id="verShort">General</span><svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="ver-menu" id="verMenu" role="menu" aria-label="Choose version">
+        <button class="ver-opt" data-set="general" role="menuitem">General</button>
+        <button class="ver-opt" data-set="highered" role="menuitem">Higher Ed</button>
+        <button class="ver-opt" data-set="bizgov" role="menuitem">Business &amp; Government</button>
+        <button class="ver-opt" data-set="k12" role="menuitem">K&ndash;12</button>
+      </div>
+    </div>
+    <div class="io-pill">
+      <button class="io-btn" id="printBtn" title="Print or Save PDF" aria-label="Print or Save PDF"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
+      <span class="io-div"></span>
+      <button class="io-btn" id="offlineBtn" title="Save offline copy" aria-label="Save offline copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg></button>
+    </div>
+    <button class="toc-btn" id="tocBtn" aria-expanded="false" aria-controls="toc" aria-label="Contents">
+      <svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav class="toc" id="toc" aria-label="Contents">
+  <div class="toc-actions">
+    <button class="toc-action" id="printBtnM"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Print or Save PDF</button>
+    <button class="toc-action" id="offlineBtnM"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg> Save offline copy</button>
+  </div>
+  <h2>What&rsquo;s inside</h2>
+  <ol>
+    <li><a href="#welcome">Welcome to Louisville</a></li>
+    <li><a href="#app">Download the app</a></li>
+    <li><a href="#logistics">Local logistics</a></li>
+    <li><a href="#filter">Filter the agenda</a></li>
+    <li><a href="#meals">Meals and guest passes</a></li>
+    <li><a href="#parties">Parties and dress code</a></li>
+    <li><a href="#maps">Find your way</a></li>
+    <li class="seg-off" data-seg="bizgov"><a href="#spotlight-bizgov">Business &amp; Government spotlight</a></li>
+    <li class="seg-off" data-seg="k12"><a href="#spotlight-k12">K&ndash;12 spotlight</a></li>
+    <li class="seg-off" data-seg="bizgov"><a href="#canvas">See Canvas Career in action</a></li>
+    <li><a href="#involved">Get involved</a></li>
+    <li data-hide="bizgov"><a href="#ignite">Get hands-on with IgniteAI</a></li>
+    <li><a href="#community">Join the Community Hub</a></li>
+    <li><a href="#before">Before you arrive</a></li>
+  </ol>
+</nav>
+
+<!-- ============ COVER ============ -->
+<header class="hero">
+  <div class="herofig" aria-hidden="true"><img id="heroImg" alt="" style="width:100%;height:auto;display:block"></div>
+  <div class="hero-body">
+    <p class="eyebrow" id="heroEyebrow">ATTENDEE GUIDE &middot; JULY 21&ndash;23, 2026</p>
+    <h1 id="heroTitle">Your guide to<br>InstructureCon 2026</h1>
+    <div class="rule"></div>
+    <p class="lead">Plan your schedule, navigate the conference, and make the most of your week in Louisville, Kentucky.</p>
+    <div class="toolbar">
+      <button class="btn btn-primary" id="printBtnC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Print or Save PDF</button>
+      <button class="btn btn-ghost" id="offlineBtnC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg> Save offline copy</button>
+    </div>
+    <p class="hint">Print or save a PDF for your bag, or keep an offline copy on your phone. This guide updates online, so check back for the latest.</p>
+
+
+  </div>
+</header>
+
+<main>
+  <!-- Welcome -->
+  <section id="welcome">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--teal)"></div>
+      <h2 class="sec-title">Welcome to Louisville</h2>
+    </div>
+    <div class="sec-card">
+    <p>InstructureCon 2026 is almost here, and we can&rsquo;t wait to welcome you to Louisville, Kentucky.</p>
+    <p id="welcomeVary">Whether you&rsquo;re coming for the sessions, the speakers, the networking, or simply the chance to explore what&rsquo;s next in teaching, learning, and technology, this guide will help you get ready for a great week.</p>
+    <p id="resourceLine">Think of it as your go-to prep resource for planning your schedule, navigating the conference, and making the most of your time at InstructureCon.</p>
+    </div>
+  </section>
+
+  <!-- Support graphic (optional) -->
+
+  <!-- App -->
+  <section id="app">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--amber)"></div>
+      <h2 class="sec-title">Download the app</h2>
+    </div>
+    <div class="sec-card">
+    <p>The Instructure Events app is your home base for everything happening at InstructureCon. To get started:</p>
+    <ol class="steps">
+      <li>Download <strong>Instructure Events</strong> from the <a href="https://apps.apple.com/us/app/instructure-events/id1458394785" target="_blank" rel="noopener">Apple App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.instructureevents.instructureevents&hl=en_US" target="_blank" rel="noopener">Google Play Store</a> (or search &ldquo;Instructure Events&rdquo; in your app store).</li>
+      <li>Log in using the email address you used to register and select <strong>Send email link</strong>.</li>
+      <li>Set up your profile with your name, title, organization, and photo.</li>
+      <li>Add your LinkedIn profile so other attendees can connect with you.</li>
+      <li>Use the <strong>Networking</strong> tab for 1:1 messaging and networking.</li>
+      <li>If you don&rsquo;t already have a Community account, the app will prompt you to join.</li>
+    </ol>
+    <p class="muted">Not seeing InstructureCon 2026 in the app? Double check that you&rsquo;re using the email address you registered with, then uninstall and reinstall the app.</p>
+    </div>
+  </section>
+
+  <!-- Logistics -->
+  <section id="logistics">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--blue)"></div>
+      <h2 class="sec-title">Local logistics</h2>
+    </div>
+    <div class="sec-card">
+    <div class="two-col">
+      <div>
+        <h3>Prepare for summer weather</h3>
+        <p>Louisville in July is warm, sunny, and humid. Expect temperatures in the upper 80s and low 90s throughout the week.</p>
+        <p>A few recommendations:</p>
+        <ul class="plain">
+          <li>Bring comfortable walking shoes.</li>
+          <li>Wear lightweight, breathable clothing.</li>
+          <li>Bring a refillable water bottle and stay hydrated.</li>
+          <li>Consider bringing a light layer for air-conditioned session rooms and meeting spaces.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Downtown travel</h3>
+        <p>The ongoing I-65 Central Corridor Project may impact travel times around downtown Louisville, especially during peak hours. Build in a little extra time if you&rsquo;re driving or using rideshare services.</p>
+        <p><strong>Here&rsquo;s the specific information:</strong></p>
+        <p class="muted"><strong>Closure Location:</strong> Interstate 65 between Jefferson Street and Interstate 264 (Watterson Expressway)&mdash;this is the heavily used interstate for guests traveling to the Kentucky International Convention Center.<br>
+        <strong>Closure date:</strong> June 1&ndash;July 31, 2026<br>
+        <strong>Detours:</strong> I-65 traffic will be detoured using I-264 (Watterson Expressway) and Interstate 64, while on-ramps at Jefferson Street and Liberty Street/Muhammad Ali Boulevard will remain open.</p>
+        <a class="ph" id="mapDowntown" href="#" aria-label="Open downtown map" style="aspect-ratio:16/7"><span class="tag" style="background:var(--blue)">MAP</span></a>
+      </div>
+    </div>
+    <div class="lou-cta">
+      <div class="lou-cta-bg" id="louBg" aria-hidden="true"></div>
+      <div class="lou-cta-inner">
+        <h3>Get to know Louisville</h3>
+        <p>Before you arrive, take a look at our Louisville guide for local recommendations, transportation tips, and everything you need to know about Bourbon City.</p>
+        <p style="margin-top:8px"><a class="link" href="https://www.gotolouisville.com/meeting-planners/destination-services/know-before-you-go/" target="_blank" rel="noopener">&rarr; Louisville Bourbon City Basics</a></p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Filter the agenda (Higher Ed only) -->
+  <section id="filter">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--sky)"></div>
+      <h2 class="sec-title">Filter the agenda</h2>
+    </div>
+    <div class="sec-card">
+    <p>There are hundreds of sessions at InstructureCon, so filters are your friend. <span id="filterTarget">To find content:</span></p>
+    <ol class="steps">
+      <li>Open the <a href="https://www.instructure.com/events/instructurecon/agenda" target="_blank" rel="noopener">Agenda</a> page on the web or in the app.</li>
+      <li>Select the <strong>Filter</strong> button.</li>
+      <li>Choose the <strong>Segment</strong> filter.</li>
+      <li id="filterSelect">Select your segment.</li>
+    </ol>
+    <p>While you&rsquo;re there, you can also filter by:</p>
+    <ul class="plain">
+      <li>Session format</li>
+      <li>Instructure product</li>
+      <li>Skill level</li>
+    </ul>
+    <p>Once you&rsquo;ve found sessions you&rsquo;re interested in, log in and star them to build your personal schedule.</p>
+    </div>
+  </section>
+
+  <!-- Meals -->
+  <section id="meals">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--green-dark)"></div>
+      <h2 class="sec-title">Meals and guest passes</h2>
+    </div>
+    <div class="sec-card">
+    <p>Your conference meals are covered throughout the week.</p>
+    <div class="sched">
+      <div class="sched-head">MEAL SCHEDULE</div>
+      <div class="row"><span class="dot" style="background:var(--teal)"></span><span class="day">Tuesday</span><span class="meals">Dinner</span></div>
+      <div class="row"><span class="dot" style="background:var(--amber)"></span><span class="day">Wednesday</span><span class="meals">Breakfast &middot; Lunch &middot; Dinner &middot; Snacks</span></div>
+      <div class="row"><span class="dot" style="background:var(--blue)"></span><span class="day">Thursday</span><span class="meals">Breakfast &middot; Lunch &middot; Dinner &middot; Snacks</span></div>
+      <div class="row"><span class="dot" style="background:var(--green)"></span><span class="day">Friday</span><span class="meals">Breakfast and lunch for Unconference attendees</span></div>
+    </div>
+    <p>Guest passes include access to all conference meals listed above, plus:</p>
+    <ul class="plain">
+      <li>Tuesday opening reception</li>
+      <li>Wednesday evening at Fourth Street Live!</li>
+      <li>Thursday closing party at Churchill Downs</li>
+      <li>The Partner Hall</li>
+    </ul>
+    </div>
+  </section>
+
+  <!-- Parties -->
+  <section id="parties">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--red)"></div>
+      <h2 class="sec-title">Parties and dress code</h2>
+    </div>
+    <div class="sec-card">
+    <div class="party-grid">
+      <div class="party">
+        <div class="top" style="background:var(--teal)"><div class="d">Tuesday</div><div class="t">6:00&ndash;9:00 pm</div></div>
+        <div class="bot"><div class="n">Opening Reception</div><div class="v">Kentucky International Convention Center Partner Hall</div><div class="dr" style="color:var(--teal)">Casual dress recommended.</div></div>
+      </div>
+      <div class="party">
+        <div class="top" style="background:var(--amber)"><div class="d">Wednesday</div><div class="t">6:30&ndash;9:00 pm</div></div>
+        <div class="bot"><div class="n">Fourth Street Live!</div><div class="v">A short walk from the convention center and hotels.</div><div class="dr" style="color:var(--amber)">Casual dress recommended.</div></div>
+      </div>
+      <div class="party">
+        <div class="top" style="background:var(--crimson)"><div class="d">Thursday</div><div class="t">6:30&ndash;9:00 pm</div></div>
+        <div class="bot"><div class="n">Closing Party at Churchill Downs</div><div class="v">&nbsp;</div><div class="dr" style="color:var(--crimson)">Derby attire is encouraged but completely optional.</div></div>
+      </div>
+    </div>
+    <div class="card dark" style="margin-top:14px">
+      <p class="kicker" style="color:var(--amber)">Shuttle information</p>
+      <p style="margin:0 0 8px; color:#fff; font-size:14px">Shuttles will pick up attendees on 3rd Street between Market and Jefferson Streets, beneath the convention center skybridge on the Main Concourse level.</p>
+      <p style="margin:0; color:#fff; font-size:14px">First shuttle departs the convention center at <strong>5:30 pm</strong>. First return shuttle departs Churchill Downs at <strong>7:30 pm</strong>.</p>
+    </div>
+    </div>
+  </section>
+
+  <!-- Maps -->
+  <section id="maps">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--teal)"></div>
+      <h2 class="sec-title">Find your way</h2>
+    </div>
+    <div class="sec-card">
+    <p>Between the convention center, hotels, evening events, and partner experiences, there&rsquo;s a lot to explore. Be sure to check the venue and hotel maps before you arrive so you know where to go and how to get there.</p>
+    <div class="map-grid">
+      <a class="ph" id="mapVenue" href="#" aria-label="Open venue map"><span class="tag" style="background:var(--teal)">VENUE MAP</span></a>
+      <a class="ph" id="mapHotel" href="#" aria-label="Open hotel map"><span class="tag" style="background:var(--blue)">HOTEL MAP</span></a>
+    </div>
+    </div>
+  </section>
+
+  <!-- Business & Government spotlight -->
+  <section id="spotlight-bizgov" class="seg-off" data-seg="bizgov">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--blue)"></div>
+      <h2 class="sec-title">Business &amp; Government spotlight</h2>
+    </div>
+    <div class="sec-card">
+    <p>Need to connect with your account team? We&rsquo;ve made it easy.</p>
+    <p>Scheduled meetings with your Instructure team will take place in <strong>rooms L019 and L020</strong> at the Kentucky International Convention Center.</p>
+    <div class="card">
+      <p class="kicker" style="color:var(--blue)">Need assistance while you&rsquo;re onsite? Your Customer Success team is just a call or text away</p>
+      <div class="contact"><b>Adam Rummelhart:</b><a href="tel:+12174062397">(217) 406-2397</a></div>
+      <div class="contact"><b>Caitlyn Luberger:</b><a href="tel:+13462487799">(346) 248-7799</a></div>
+      <div class="contact"><b>JT Eborn:</b><a href="tel:+18014288942">(801) 428-8942</a></div>
+    </div>
+    <div class="card dark">
+      <p class="kicker" style="color:var(--amber)">And don&rsquo;t miss the Business and Government Happy Hour</p>
+      <p style="margin:0 0 4px; color:#fff; font-size:14px"><b>When:</b> July 22, 5:30&ndash;6:30 PM</p>
+      <p style="margin:0 0 12px; color:#fff; font-size:14px"><b>Where:</b> PBR Louisville Patio - 432 S 4th St, Louisville, KY 40202</p>
+      <a class="btn-inline" href="https://events.bizzabo.com/874266" target="_blank" rel="noopener">Register here</a>
+    </div>
+    <p>Come connect with peers, swap ideas, and continue the conversation outside the session rooms.</p>
+    </div>
+  </section>
+
+  <!-- K-12 spotlight -->
+  <section id="spotlight-k12" class="seg-off" data-seg="k12">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--blue)"></div>
+      <h2 class="sec-title">K&ndash;12 spotlight</h2>
+    </div>
+    <div class="sec-card">
+    <p>Looking for your people? We&rsquo;ve got you covered.</p>
+    <p>The Hyatt is your K&ndash;12 home base at InstructureCon, with a dedicated lounge and session space just for you and your peers. Stop by to connect with other K&ndash;12 attendees, take a breather between sessions, and find conversations that speak directly to the work happening in schools and districts.</p>
+    <div class="card dark">
+      <p class="kicker" style="color:var(--amber)">Also, don&rsquo;t miss the K&ndash;12 Happy Hour</p>
+      <p style="margin:0 0 4px; color:#fff; font-size:14px"><b>When:</b> July 22, 5:30&ndash;6:30 PM</p>
+      <p style="margin:0 0 12px; color:#fff; font-size:14px"><b>Where:</b> Tavern on Fourth, second floor at Sports &amp; Social</p>
+      <a class="btn-inline" href="https://events.bizzabo.com/868887" target="_blank" rel="noopener">Register here</a>
+    </div>
+    <p>Come grab a drink, meet fellow K&ndash;12 attendees, swap ideas, and make a few new connections before the evening festivities begin.</p>
+    </div>
+  </section>
+
+  <!-- Involved (hidden for bizgov) -->
+  <section id="canvas" class="seg-off" data-seg="bizgov">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--green-dark)"></div>
+      <h2 class="sec-title">See Canvas Career in action</h2>
+    </div>
+    <div class="sec-card">
+    <p>Canvas Career is a skills-based learning platform built for professional learners. It&rsquo;s designed for organizations that need training tied to real job skills, not just compliance requirements.</p>
+    <p class="kicker" style="color:var(--green-dark)">Here&rsquo;s where to find it at InstructureCon</p>
+    <ul class="plain">
+      <li><strong>Demo booth:</strong> Open all three days, July 21&ndash;23, with walkthroughs of Skillspace, the IgniteAI Agent, and the Admin Dashboard</li>
+      <li><strong>Customer sessions:</strong> Teams using Canvas Career today, including USA Swimming and White&rsquo;s Chapel Methodist Church, will share how they&rsquo;re using it</li>
+      <li><strong>Pre-con workshops:</strong> A hands-on introduction to the platform ahead of the main conference</li>
+    </ul>
+    <p class="muted">Check the agenda for exact times and locations.</p>
+    </div>
+  </section>
+
+  <section id="involved">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--amber)"></div>
+      <h2 class="sec-title">Get involved</h2>
+    </div>
+    <div class="sec-card">
+    <p>Some of the best InstructureCon experiences happen outside of sessions. Make time for:</p>
+    <ul class="plain">
+      <li><a href="https://community.instructure.com/en/discussion/666540/welcome-to-the-learnerville-economy" target="_blank" rel="noopener">Learnerville Loot</a> and the Vendor Marketplace</li>
+      <li>Community activities and networking opportunities</li>
+      <li><a href="https://www.instructure.com/events/instructurecon/louisville-visual-art" target="_blank" rel="noopener">Louisville Visual Art experiences</a> happening throughout the event</li>
+      <li>Opportunities to engage with local artists and organizations</li>
+    </ul>
+    <p>Want more ways to participate?</p>
+    <p>Check out the <a href="https://www.instructure.com/events/instructurecon/get-involved" target="_blank" rel="noopener">Get Involved</a> page for the latest experiences and activities happening throughout the week.</p>
+    </div>
+  </section>
+
+  <!-- IgniteAI -->
+  <section id="ignite" data-hide="bizgov">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--blue)"></div>
+      <h2 class="sec-title">Get hands-on with IgniteAI</h2>
+    </div>
+    <div class="sec-card">
+    <p>Some of the best sessions at InstructureCon aren&rsquo;t just presentations. They&rsquo;re workshops where you can actually get in and play.</p>
+    <p>We&rsquo;ve extended free access to four premium IgniteAI features through July 31 so attendees can participate in hands-on IgniteAI workshops. If you&rsquo;re a Canvas admin, turn on these feature options now so you don&rsquo;t waste a second of in-person connection time.</p>
+    <div class="feat-grid">
+      <div class="feat"><div><div class="ft">IgniteAI Agent</div><div class="fd">Activate an AI-powered assistant built into the Canvas experience</div></div></div>
+      <div class="feat"><div><div class="ft">Generator for Rubrics</div><div class="fd">Create detailed, customizable rubrics in seconds</div></div></div>
+      <div class="feat"><div><div class="ft">Insights for Discussions</div><div class="fd">Surface patterns and themes from student discussion posts</div></div></div>
+      <div class="feat"><div><div class="ft">Grading Assistance for SpeedGrader</div><div class="fd">Get suggested feedback as you grade</div></div></div>
+    </div>
+    <p class="muted" style="margin-top:12px">Head into your Canvas admin settings to enable these features before the conference. If you&rsquo;re not sure how, check the IgniteAI Community page for feature-by-feature guidance.</p>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section id="community">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--teal)"></div>
+      <h2 class="sec-title">Join the Community Hub</h2>
+    </div>
+    <div class="sec-card">
+    <p>InstructureCon may last a few days, but the conversation doesn&rsquo;t end with the closing night party.</p>
+    <p id="communityIntro">Think of the InstructureCon <a href="https://community.instructure.com/en/categories/instructurecon2026" target="_blank" rel="noopener">Community Hub</a> as the digital campus of the conference—a place to meet people before you arrive, find your people while you’re here, and keep the conversations going long after you head home.</p>
+    <p>Need a restaurant recommendation? Looking for someone to grab coffee with before a session? Wondering whether Hack Night is for beginners? The Community (and our Community Coaches) have your back.</p>
+    <p class="kicker" style="color:var(--teal)">Inside the Hub, you&rsquo;ll find</p>
+    <ul class="plain">
+      <li><a href="https://community.instructure.com/en/discussion/666312/where-s-your-launch-point-join-the-instructurecon2026-map#latest" target="_blank" rel="noopener">Light Up the Map</a>: See where attendees are traveling from</li>
+      <li>Details on <a href="https://community.instructure.com/en/discussion/666350/the-instructurecon-2026-unconference-where-the-best-conversations-keep-going#latest" target="_blank" rel="noopener">Unconference</a>, <a href="https://community.instructure.com/en/discussion/666134/hack-night-is-back-and-this-year-you-help-pick-what-we-build#latest" target="_blank" rel="noopener">Hack Night</a>, <a href="https://community.instructure.com/en/discussion/666544/instcon-game-night-2026-your-ticket-to-ride-louisville-kentucky#latest" target="_blank" rel="noopener">Game Night</a>, and <a href="https://community.instructure.com/en/discussion/666467/solo-but-not-alone-meet-the-other-solopandas#latest" target="_blank" rel="noopener">the Solo Pandas Meet Up</a></li>
+      <li>Session previews, <a href="https://community.instructure.com/en/discussion/666460/presenter-tips-from-veteran-speakers#latest" target="_blank" rel="noopener">presenter tips</a>, and attendee recommendations</li>
+      <li><a href="https://community.instructure.com/en/discussion/666527/a-champion-s-instructurecon2026-packing-list#latest" target="_blank" rel="noopener">Packing lists</a> and practical conference advice</li>
+      <li>The official InstructureCon <a href="https://open.spotify.com/playlist/3LPkQDpMaOFdFmwY9kRevx?si=ZaYA3g3wStO2CQd_enfALQ" target="_blank" rel="noopener">Spotify playlist</a></li>
+      <li>Instructions for claiming your <a href="https://community.instructure.com/en/entry/signin?Target=badge%2Frequest%2F233" target="_blank" rel="noopener">digital attendee badge</a></li>
+      <li><a href="https://community.instructure.com/en/categories/instructurecon26-blog" target="_blank" rel="noopener">Community session</a> blogs and highlights</li>
+      <li><a href="https://www.instructure.com/events/instructurecon/faqs" target="_blank" rel="noopener">FAQs</a>, updates, and event support resources</li>
+    </ul>
+    <p>Whether you&rsquo;re planning your week, looking for your next session, or reliving your favorite moments after the event, the Community Hub is the place to be.</p>
+    </div>
+  </section>
+
+  <!-- Before -->
+  <section id="before">
+    <div class="sec-bg" aria-hidden="true"></div>
+    <div class="sec-head">
+      <div class="sec-num" style="--acc:var(--crimson)"></div>
+      <h2 class="sec-title">Before you arrive</h2>
+    </div>
+    <div class="sec-card">
+    <p>Pack your comfy shoes, star your sessions, and make sure the app is downloaded&mdash;we&rsquo;ll take care of the rest. See you in Louisville for a week of big ideas, new connections, and maybe a little bit of magic.</p>
+    <p>A few things to do before you head to Louisville:</p>
+    <div class="card dark">
+      <ul class="checklist">
+        <li><span class="box" style="border-color:var(--teal)"></span>Download the app</li>
+        <li><span class="box" style="border-color:var(--amber)"></span>Star your sessions</li>
+        <li><span class="box" style="border-color:var(--green)"></span>Enable your IgniteAI features</li>
+        <li><span class="box" style="border-color:var(--blue)"></span>Join the Community Hub</li>
+        <li><span class="box" style="border-color:var(--red)"></span>Start connecting with other attendees</li>
+        <li class="seg-off" data-seg="bizgov"><span class="box" style="border-color:var(--gold)"></span>Register for the Business and Government Happy Hour at PBR Louisville</li>
+      </ul>
+      <p class="signoff">&mdash; The Instructure Team</p>
+    </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="brandmark" aria-label="InstructureCon 26"><svg viewBox="0 0 366 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 38.0493V0.789062H3.35791V38.0493H0Z" fill="#061C30"/>
+<path d="M13.6307 38.0494H10.4863V12.9829H13.5276V16.9761C14.8899 14.2968 17.8281 12.3481 21.6573 12.3481C27.5262 12.3481 30.516 16.5554 30.516 21.7001V38.042H27.3716V22.2242C27.3716 18.2826 25.4349 15.1825 20.6116 15.1825C16.3111 15.1825 13.6381 18.8067 13.6381 23.0656V38.042L13.6307 38.0494Z" fill="#061C30"/>
+<path d="M37.0687 30.4763C37.54 33.5248 39.8449 35.9975 43.9392 35.9975C47.032 35.9975 49.4989 34.1595 49.4989 31.5318C49.4989 29.2215 47.923 27.9593 45.2499 27.3246L41.2146 26.3798C37.5474 25.5383 35.0805 23.3313 35.0805 19.7072C35.0805 15.6623 38.9612 12.3481 43.5194 12.3481C49.3369 12.3481 51.8038 15.8173 52.4812 18.8141L49.7051 19.8622C49.2338 17.4485 47.5033 15.0792 43.5194 15.0792C40.6917 15.0792 38.1733 16.8654 38.1733 19.4931C38.1733 21.6484 39.5356 22.9106 42.1056 23.4864L46.0894 24.3795C50.2279 25.3243 52.5917 27.6936 52.5917 31.3178C52.5917 34.9419 49.4473 38.7285 43.8876 38.7285C37.7535 38.7285 34.6607 34.7869 34.1895 31.4728L37.0761 30.4763H37.0687Z" fill="#061C30"/>
+<path d="M62.0269 12.9837H68.5291V15.8254H62.0269V30.9568C62.0269 34.0053 63.4407 35.4741 66.2758 35.4741C67.1668 35.4741 68.0578 35.2601 68.5291 35.0534V37.8361C68.1094 38.0502 66.9533 38.3085 65.4363 38.3085C61.4009 38.3085 58.8825 35.8358 58.8825 31.2668V15.818H53.5879V12.9763H55.473C57.9399 12.9763 58.9856 11.8691 58.9856 9.30045V5.0415H62.0269V12.9763V12.9837Z" fill="#061C30"/>
+<path d="M84.5207 16.238C83.9463 16.083 83.1584 15.9722 82.3189 15.9722C78.07 15.9722 74.9256 18.7033 74.9256 24.4311V38.042H71.7812V12.9829H74.8741V17.6625C76.391 14.1934 79.2776 12.6729 82.584 12.6729C83.4235 12.6729 84.1009 12.7762 84.5207 12.9386V16.2527V16.238Z" fill="#061C30"/>
+<path d="M96.1132 38.729C89.7656 38.729 86.7832 33.9977 86.7832 28.7423V12.9761H89.9276V28.2182C89.9276 32.2114 91.7612 35.8873 96.6876 35.8873C101.143 35.8873 103.764 32.4698 103.764 28.2699V12.9761H106.909V33.2596C106.909 35.1491 107.063 36.9354 107.225 38.0426H104.236C104.132 37.5185 103.97 36.1013 103.97 34.5217V34.1527C102.814 36.5737 100.038 38.7216 96.1058 38.7216L96.1132 38.729Z" fill="#061C30"/>
+<path d="M114.412 25.5387C114.412 31.9012 118.499 35.8945 123.536 35.8945C128.573 35.8945 130.826 32.5286 131.665 29.7459L134.442 30.9048C133.234 34.7947 129.567 38.7362 123.536 38.7362C116.459 38.7362 111.268 33.2151 111.268 25.546C111.268 17.877 116.511 12.3042 123.536 12.3042C129.515 12.3042 133.079 15.98 134.228 20.1873L131.452 21.3461C130.612 18.4011 128.359 15.146 123.536 15.146C118.712 15.146 114.412 19.0875 114.412 25.5534V25.5387Z" fill="#061C30"/>
+<path d="M143.455 12.9837H149.957V15.8254H143.455V30.9568C143.455 34.0053 144.868 35.4741 147.704 35.4741C148.595 35.4741 149.486 35.2601 149.957 35.0534V37.8361C149.537 38.0502 148.381 38.3085 146.864 38.3085C142.829 38.3085 140.31 35.8358 140.31 31.2668V15.818H135.016V12.9763H136.901C139.368 12.9763 140.413 11.8691 140.413 9.30045V5.0415H143.455V12.9763V12.9837Z" fill="#061C30"/>
+<path d="M162.225 38.729C155.877 38.729 152.895 33.9977 152.895 28.7423V12.9761H156.039V28.2182C156.039 32.2114 157.872 35.8873 162.799 35.8873C167.254 35.8873 169.876 32.4698 169.876 28.2699V12.9761H173.02V33.2596C173.02 35.1491 173.175 36.9354 173.337 38.0426H170.347C170.244 37.5185 170.082 36.1013 170.082 34.5217V34.1527C168.926 36.5737 166.149 38.7216 162.217 38.7216L162.225 38.729Z" fill="#061C30"/>
+<path d="M191.849 16.238C191.274 16.083 190.487 15.9722 189.647 15.9722C185.398 15.9722 182.254 18.7033 182.254 24.4311V38.042H179.109V12.9829H182.202V17.6625C183.719 14.1934 186.606 12.6729 189.912 12.6729C190.752 12.6729 191.429 12.7762 191.849 12.9386V16.2527V16.238Z" fill="#061C30"/>
+<path d="M215.083 30.9564C213.67 35.2154 209.892 38.7362 204.126 38.7362C197.521 38.7362 191.961 33.8499 191.961 25.4427C191.961 17.5596 197.307 12.3042 203.544 12.3042C210.938 12.3042 215.186 17.5596 215.238 24.9703C215.238 25.391 215.238 25.7084 215.186 26.1292H195.157V26.3432C195.208 32.1227 199.192 35.9092 204.119 35.9092C208.625 35.9092 211.247 33.2815 212.3 29.9674L215.076 30.9638L215.083 30.9564ZM211.932 23.4941C211.829 18.8144 208.839 15.1386 203.596 15.1386C198.927 15.1386 195.577 18.8661 195.26 23.4941H211.932Z" fill="#061C30"/>
+<path d="M217.91 19.4417C217.91 6.98967 226.982 0.103027 236.106 0.103027C244.442 0.103027 250.369 4.88603 252.093 11.9793L249.103 13.0275C247.638 6.93062 242.814 3.14407 236.098 3.14407C228.499 3.14407 221.26 8.76854 221.26 19.4343C221.26 30.1002 228.499 35.6729 236.098 35.6729C243.072 35.6729 247.844 31.4657 249.361 25.6345L252.247 26.6827C250.465 33.6726 244.486 38.714 236.098 38.714C226.871 38.714 217.902 31.879 217.902 19.427L217.91 19.4417Z" fill="#061C30"/>
+<path d="M254.406 25.5383C254.406 17.6552 259.804 12.3481 266.829 12.3481C273.854 12.3481 279.252 17.6552 279.252 25.5383C279.252 33.4214 273.803 38.7285 266.829 38.7285C259.855 38.7285 254.406 33.3698 254.406 25.5383ZM266.836 35.8941C271.763 35.8941 276.063 32.0559 276.063 25.5383C276.063 19.0207 271.763 15.1825 266.836 15.1825C261.91 15.1825 257.61 18.9691 257.61 25.5383C257.61 32.1076 261.91 35.8941 266.836 35.8941Z" fill="#061C30"/>
+<path d="M286.705 38.0494H283.561V12.9829H286.602V16.9761C287.964 14.2968 290.902 12.3481 294.731 12.3481C300.6 12.3481 303.59 16.5554 303.59 21.7001V38.042H300.446V22.2242C300.446 18.2826 298.509 15.1825 293.686 15.1825C289.385 15.1825 286.712 18.8067 286.712 23.0656V38.042L286.705 38.0494Z" fill="#061C30"/>
+<path d="M307.992 13.98C307.889 13.4559 307.837 12.7694 307.837 12.142C307.837 5.7278 312.609 0 320.893 0C329.178 0 333.633 5.30707 333.633 11.5589C333.633 16.4453 330.908 20.3868 326.608 23.0662L319.318 27.6868C317.381 28.8973 315.754 30.3145 315.231 32.3665H333.846V38.0426H307.477C307.58 31.7908 309.885 27.0077 316.284 22.9629L322.418 19.0213C325.776 16.9177 327.293 14.4524 327.293 11.6623C327.293 8.45883 325.142 5.51374 320.739 5.51374C316.335 5.51374 313.979 8.71718 313.979 12.7104C313.979 13.2861 314.082 13.9209 314.133 14.5483L307.999 13.9726L307.992 13.98Z" fill="#061C30"/>
+<path d="M362.315 7.09369C360.85 6.35557 358.486 5.57317 355.813 5.57317C348.42 5.57317 343.545 10.7252 342.97 18.0843C344.436 15.7223 347.742 13.5153 352.565 13.5153C359.959 13.5153 365.202 18.195 365.202 26.0781C365.202 33.9612 358.862 38.8475 351.306 38.8475C343.751 38.8475 336.682 33.6438 336.682 21.7158C336.682 8.05324 345.018 0.0151367 356.188 0.0151367C359.598 0.0151367 362.477 0.856591 364.105 2.01544L362.323 7.11583L362.315 7.09369ZM351.299 33.474C355.386 33.474 358.898 30.743 358.898 26.115C358.898 21.487 355.386 18.756 351.299 18.756C347.212 18.756 343.751 21.487 343.751 26.115C343.751 30.743 347.418 33.474 351.299 33.474Z" fill="#061C30"/>
+</svg></div>
+  <div class="u">instructure.com/events/instructurecon</div>
+</footer>
+
+<script>
+(function(){
+  var ASSET_BASE="https://cdn.jsdelivr.net/gh/jefsop/instcon-guide-assets@main"; /* image host base, no trailing slash */
+  var HEROIMG=ASSET_BASE+"/AttendeeGuide-hero.png";
+  var NUMIMG={}; (function(){for(var b=1;b<=13;b++){var s=(""+b).length<2?("0"+b):(""+b);NUMIMG[b]=ASSET_BASE+"/section-number-"+s+".png";}})();
+  var BGIMG={welcome:ASSET_BASE+"/Welcome-BG.png",app:ASSET_BASE+"/App-BG.png",logistics:ASSET_BASE+"/Logistics-BG.png",meals:ASSET_BASE+"/Meals-BG.png",parties:ASSET_BASE+"/Parties-BG.png",maps:ASSET_BASE+"/Wayfinding-BG.png",involved:ASSET_BASE+"/GetInvolved-BG.png",ignite:ASSET_BASE+"/Ignite-BG.png",community:ASSET_BASE+"/Community-BG.png",before:ASSET_BASE+"/BeforeArrival-BG.png",filter:ASSET_BASE+"/Filter-BG.png","spotlight-bizgov":ASSET_BASE+"/Spotlight-BizGov-BG.png","spotlight-k12":ASSET_BASE+"/Spotlight-K12-BG.png",canvas:ASSET_BASE+"/Canvas-BG.png"};
+  var MAPIMG={mapDowntown:ASSET_BASE+"/map-downtown.png",mapVenue:ASSET_BASE+"/map-venue.png",mapHotel:ASSET_BASE+"/map-hotel.png"};
+
+  var SEG = {
+    general:{
+      eyebrow:'ATTENDEE GUIDE · JULY 21–23, 2026',
+      title:'Your Guide to<br>InstructureCon 2026',
+      welcome:"Whether you’re coming for the sessions, the speakers, the networking, or simply the chance to explore what’s next in teaching, learning, and technology, this guide will help you get ready for a great week.",
+      resource:"Think of it as your go-to prep resource for planning your schedule, navigating the conference, and making the most of your time at InstructureCon.",
+      filterTarget:'To find content:',
+      filterSelect:'',
+      community:"Think of the InstructureCon <a href='https://community.instructure.com/en/categories/instructurecon2026' target='_blank' rel='noopener'>Community Hub</a> as the digital campus of the conference—a place to meet people before you arrive, find your people while you’re here, and keep the conversations going long after you head home."
+    },
+    highered:{
+      eyebrow:'HIGHER ED GUIDE · JULY 21–23, 2026',
+      title:'Your higher ed guide to<br>InstructureCon 2026',
+      welcome:"Whether you’re exploring new approaches to student success, thinking about the role of AI in higher education, or looking for practical ideas you can bring back to campus this fall, this guide will help you get ready for a great week.",
+      resource:"Think of it as your one-stop resource for planning your schedule, navigating the conference, and making the most of your time at InstructureCon.",
+      filterTarget:'To find higher education content:',
+      filterSelect:'Select Higher Education.',
+      community:"Think of the InstructureCon <a href='https://community.instructure.com/en/categories/instructurecon2026' target='_blank' rel='noopener'>Community Hub</a> as the digital campus of the conference—a place to meet people before you arrive, find your people while you’re here, and keep the conversations going long after you head home."
+    },
+    bizgov:{
+      eyebrow:'BUSINESS &amp; GOVERNMENT · JULY 21–23, 2026',
+      title:'The business and government guide to<br>InstructureCon 2026',
+      welcome:"Whether you’re exploring new approaches to workforce development, scaling training programs, improving learner engagement, or finding smarter ways to measure impact, this guide will help you get ready for a great week.",
+      resource:"Think of it as your go-to prep resource for planning your schedule, navigating the conference, and making the most of your time at InstructureCon.",
+      filterTarget:'To find Business, Government, or Non Profit content:',
+      filterSelect:'Select Business or Government, or Non Profit.',
+      community:"Think of the InstructureCon <a href='https://community.instructure.com/en/categories/instructurecon2026' target='_blank' rel='noopener'>Community Hub</a> as the digital break room of the conference—a place to meet people before you arrive, find your people while you’re here, and keep the conversations going long after you head home."
+    },
+    k12:{
+      eyebrow:'K–12 GUIDE · JULY 21–23, 2026',
+      title:'Your K–12 guide to<br>InstructureCon 2026',
+      welcome:"Whether you’re looking for practical classroom ideas, district-wide strategies, new ways to save time, or fresh approaches to supporting students and educators, this guide will help you get ready for a great week.",
+      resource:"Think of it as your go-to prep resource for planning your schedule, navigating the conference, and making the most of your time at InstructureCon.",
+      filterTarget:'To find K12 content:',
+      filterSelect:'Select K12.',
+      community:"Think of the InstructureCon <a href='https://community.instructure.com/en/categories/instructurecon2026' target='_blank' rel='noopener'>Community Hub</a> as the digital faculty lounge of the conference—a place to meet people before you arrive, find your people while you’re here, and keep the conversations going long after you head home."
+    }
+  };
+  var VFULL = {general:'General', highered:'Higher Ed', bizgov:'Business & Government', k12:'K–12'};
+  var VSHORT = {general:'General', highered:'Higher Ed', bizgov:'Business & Gov', k12:'K–12'};
+
+  function q(id){ return document.getElementById(id); }
+  function setText(id,v){ var e=q(id); if(e && e.textContent!==v) e.textContent=v; }
+  function setHTML(id,v){ var e=q(id); if(e && e.innerHTML!==v) e.innerHTML=v; }
+
+  function setImages(){
+    var hero=q('heroImg'); if(hero && hero.getAttribute('src')!==HEROIMG) hero.src=HEROIMG;
+    var secs=document.querySelectorAll('main > section');
+    for(var i=0;i<secs.length;i++){ var b=secs[i].querySelector('.sec-bg'); if(b && BGIMG[secs[i].id]){ var u='url("'+BGIMG[secs[i].id]+'")'; if(b.style.backgroundImage!==u) b.style.backgroundImage=u; } }
+    for(var k in MAPIMG){ var e=q(k); if(e){ var mu=MAPIMG[k]; if((e.style.backgroundImage||'').indexOf(mu)<0){ e.style.backgroundImage='url("'+mu+'")'; e.style.backgroundSize='cover'; e.style.backgroundPosition='center'; } if(e.getAttribute('href')!==mu){ e.setAttribute('href',mu); e.setAttribute('target','_blank'); e.setAttribute('rel','noopener'); } } }
+    var lou=q('louBg'); if(lou){ var lu=ASSET_BASE+"/Bourbon-BG.png"; if((lou.style.backgroundImage||'').indexOf(lu)<0) lou.style.backgroundImage='url("'+lu+'")'; }
+  }
+
+  function applySegment(seg, record){
+    if(!SEG[seg]) seg='general';
+    document.body.setAttribute('data-segment', seg);
+    var vary=document.querySelectorAll('[data-seg]');
+    for(var i=0;i<vary.length;i++){ var list=vary[i].getAttribute('data-seg').split(/\s+/); vary[i].classList.toggle('seg-off', list.indexOf(seg)<0); }
+    var hides=document.querySelectorAll('[data-hide]');
+    for(var j=0;j<hides.length;j++){ var hl=hides[j].getAttribute('data-hide').split(/\s+/); hides[j].classList.toggle('seg-off', hl.indexOf(seg)>=0); }
+    var s=SEG[seg];
+    setHTML('heroEyebrow', s.eyebrow); setHTML('heroTitle', s.title); setHTML('welcomeVary', s.welcome);
+    setText('resourceLine', s.resource); setText('filterTarget', s.filterTarget);
+    var fsel=q('filterSelect'); if(fsel){ if(s.filterSelect){ if(fsel.textContent!==s.filterSelect) fsel.textContent=s.filterSelect; fsel.classList.remove('seg-off'); } else { fsel.classList.add('seg-off'); } }
+    setHTML('communityIntro', s.community);
+    setText('verFull', VFULL[seg]||'General'); setText('verShort', VSHORT[seg]||'General');
+    var opts=document.querySelectorAll('.ver-opt[data-set]'); for(var k=0;k<opts.length;k++){ opts[k].classList.toggle('on', opts[k].getAttribute('data-set')===seg); }
+    // number badges, numbered by visible order — branded image with CSS fallback
+    var n=0;
+    var all=document.querySelectorAll('main > section');
+    for(var m=0;m<all.length;m++){ var sec=all[m]; if(sec.classList.contains('seg-off')) continue; n++; var el=sec.querySelector('.sec-num');
+      if(el && el.getAttribute('data-num')!==(''+n)){ el.setAttribute('data-num', ''+n); el.textContent=n; el.classList.remove('has-num-img'); el.style.backgroundImage='';
+        (function(node,url){ var im=new Image(); im.onload=function(){ node.textContent=''; node.classList.add('has-num-img'); node.style.backgroundImage='url("'+url+'")'; }; im.src=url; })(el, NUMIMG[n]);
+      }
+    }
+    if(record!==false){ try{ history.replaceState(null,'','?segment='+seg); }catch(e){} }
+  }
+
+  function setVer(open){ var vp=document.querySelector('.verpick'), vb=q('verBtn'); if(vp) vp.classList.toggle('open', open); if(vb) vb.setAttribute('aria-expanded', open?'true':'false'); }
+  function setToc(open){ var toc=q('toc'), tb=q('tocBtn'); if(toc) toc.classList.toggle('open', open); if(tb) tb.setAttribute('aria-expanded', open?'true':'false'); }
+  function ensureGateOpen(){ var g=q('gate'); if(!g) return; if(getComputedStyle(g).display==='none'){ g.classList.remove('closing'); g.style.display='flex'; } if(!document.body.classList.contains('gated')) document.body.classList.add('gated'); }
+  function closeGate(){ var g=q('gate'); document.body.classList.remove('gated'); if(g){ g.classList.add('closing'); g.style.display='none'; } }
+  function saveOffline(){ try{ var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML; var blob=new Blob([html],{type:'text/html'}); var url=URL.createObjectURL(blob); var a=document.createElement('a'); a.href=url; a.download='InstructureCon-2026-Attendee-Guide.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url); }catch(err){ window.print(); } }
+
+  var chosen=null;
+  function paramSeg(){ try{ var p=new URLSearchParams(location.search).get('segment'); return (p&&SEG[p])?p:null; }catch(e){ return null; } }
+  function choose(seg){ if(!SEG[seg]) return; chosen=seg; applySegment(seg, true); closeGate(); window.scrollTo(0,0); }
+
+  function applyAll(){
+    if(!q('gate') || !document.querySelector('main > section')) return;
+    setImages();
+    var seg = chosen || paramSeg();
+    if(seg){ applySegment(seg, false); if(document.body.classList.contains('gated')) closeGate(); }
+    else { applySegment('general', false); ensureGateOpen(); }
+  }
+
+  // ---- interactions via delegation on document (survive hydration re-renders) ----
+  document.addEventListener('click', function(e){
+    var t=e.target; if(!t || !t.closest) return;
+    var card=t.closest('.gate-card[data-set]'); if(card){ choose(card.getAttribute('data-set')); return; }
+    var vo=t.closest('.ver-opt[data-set]'); if(vo){ choose(vo.getAttribute('data-set')); setVer(false); window.scrollTo({top:0,behavior:'smooth'}); return; }
+    if(t.closest('#verBtn')){ e.stopPropagation(); var vp=document.querySelector('.verpick'); setVer(!(vp&&vp.classList.contains('open'))); return; }
+    if(t.closest('#tocBtn')){ var toc=q('toc'); setToc(!(toc&&toc.classList.contains('open'))); return; }
+    if(t.closest('#printBtn,#printBtnC')){ window.print(); return; }
+    if(t.closest('#printBtnM')){ setToc(false); setTimeout(window.print,60); return; }
+    if(t.closest('#offlineBtn,#offlineBtnC')){ saveOffline(); return; }
+    if(t.closest('#offlineBtnM')){ setToc(false); saveOffline(); return; }
+    if(t.closest('#toc a')){ setToc(false); return; }
+    if(!t.closest('.verpick')) setVer(false);
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ setToc(false); setVer(false); } });
+
+  // ---- run now, and re-assert until hydration settles, then stop ----
+  applyAll();
+  var ticks=0; var iv=setInterval(function(){ applyAll(); if(++ticks>48) clearInterval(iv); }, 250);
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', applyAll);
+  window.addEventListener('load', applyAll);
+})();
+
+</script>
+</body>
+</html>
