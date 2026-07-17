@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --gold:#D69129; --amber:#F9A81A; --teal:#05B7CB; --sky:#52C8EB;
+    --gold:#D69129; --teal-ink:#0B6E7D; --green-ink:#097A3B; --amber-ink:#8A5E00; --amber:#F9A81A; --teal:#05B7CB; --sky:#52C8EB;
     --blue:#1D6BB5; --navy:#1F2146; --green:#20B24B; --green-dark:#0C9547;
     --red:#ED2024; --crimson:#D42027;
     --ink:#1F2146; --body:#2A2C3A; --muted:#6B7280; --line:#E2E4EA;
@@ -139,12 +139,12 @@
   /* ---------- cover / hero ---------- */
   .hero{position:relative; display:flex; flex-direction:column; background:#A4DDD6; color:var(--body); overflow:hidden;}
   .herofig{order:2; background:transparent; line-height:0; margin-top:6px;}
-  .herofig svg{display:block; width:100%; height:auto; max-width:var(--maxw); margin:0 auto;}
+  .herofig svg, .herofig img{display:block; width:100%; height:auto; max-width:720px; margin:0 auto;}
   .hero-body{order:1; width:100%; padding:40px var(--pad) 24px; max-width:var(--maxw); margin-inline:auto;}
   .cover-logo{margin-bottom:16px;}
   .cover-logo svg{height:22px;}
-  .eyebrow{font-size:12px; font-weight:700; letter-spacing:3px; color:var(--red); margin:0 0 8px;}
-  .hero h1{font-weight:900; font-size:clamp(28px,6.4vw,44px); line-height:1.02; letter-spacing:-1.2px; margin:0; color:var(--navy);}
+  .eyebrow{font-size:12px; font-weight:700; letter-spacing:3px; color:var(--navy); margin:0 0 8px;}
+  .hero h1{font-weight:900; font-size:clamp(28px,6.4vw,44px); line-height:1.09; letter-spacing:-1.2px; margin:0; color:var(--navy);}
   .rule{width:64px; height:6px; background:var(--red); border-radius:3px; margin:16px 0;}
   .lead{font-size:15px; color:var(--body); max-width:52ch; margin:0 0 22px;}
   .meta{display:inline-flex; gap:10px; align-items:center; background:rgba(255,255,255,.08);
@@ -271,6 +271,28 @@
     @page{margin:14mm;}
   }
 </style>
+
+<style id="static-assets">
+/* static assets (relative paths — assets/ folder must sit next to index.html) */
+#welcome .sec-bg{background-image:url('assets/Welcome-BG.png');}
+#app .sec-bg{background-image:url('assets/App-BG.png');}
+#logistics .sec-bg{background-image:url('assets/Logistics-BG.png');}
+#meals .sec-bg{background-image:url('assets/Meals-BG.png');}
+#parties .sec-bg{background-image:url('assets/Parties-BG.png');}
+#maps .sec-bg{background-image:url('assets/Wayfinding-BG.png');}
+#involved .sec-bg{background-image:url('assets/GetInvolved-BG.png');}
+#ignite .sec-bg{background-image:url('assets/Ignite-BG.png');}
+#community .sec-bg{background-image:url('assets/Community-BG.png');}
+#before .sec-bg{background-image:url('assets/BeforeArrival-BG.png');}
+#filter .sec-bg{background-image:url('assets/Filter-BG.png');}
+#spotlight-bizgov .sec-bg{background-image:url('assets/Spotlight-BizGov-BG.png');}
+#spotlight-k12 .sec-bg{background-image:url('assets/Spotlight-K12-BG.png');}
+#canvas .sec-bg{background-image:url('assets/Canvas-BG.png');}
+#mapDowntown{background-image:url('assets/map-downtown.png');background-size:cover;background-position:center;}
+#mapVenue{background-image:url('assets/map-venue.png');background-size:cover;background-position:center;}
+#mapHotel{background-image:url('assets/map-hotel.png');background-size:cover;background-position:center;}
+#louBg{background-image:url('assets/Bourbon-BG.png');background-size:cover;background-position:center;}
+</style>
 </head>
 <body data-segment="general">
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
@@ -299,9 +321,9 @@
     <p class="gate-sub">Pick your version to see the sessions, spotlights, and tips tailored to you. You can switch anytime once you&rsquo;re in.</p>
     <div class="gate-grid">
       <button class="gate-card" data-set="general" style="--c:var(--teal)"><span class="gate-card-name">General</span><span class="gate-card-desc">The full experience for every attendee</span><span class="gate-go">Open guide &rarr;</span></button>
-      <button class="gate-card" data-set="highered" style="--c:var(--blue)"><span class="gate-card-name">Higher Ed</span><span class="gate-card-desc">Student success and AI on campus</span><span class="gate-go">Open guide &rarr;</span></button>
+      <button class="gate-card" data-set="highered" style="--c:var(--sky)"><span class="gate-card-name">Higher Ed</span><span class="gate-card-desc">Student success and AI on campus</span><span class="gate-go">Open guide &rarr;</span></button>
       <button class="gate-card" data-set="bizgov" style="--c:var(--amber)"><span class="gate-card-name">Business &amp; Government</span><span class="gate-card-desc">Workforce development and training at scale</span><span class="gate-go">Open guide &rarr;</span></button>
-      <button class="gate-card" data-set="k12" style="--c:var(--crimson)"><span class="gate-card-name">K&ndash;12</span><span class="gate-card-desc">Classroom ideas and district strategy</span><span class="gate-go">Open guide &rarr;</span></button>
+      <button class="gate-card" data-set="k12" style="--c:#FF6E6E"><span class="gate-card-name">K&ndash;12</span><span class="gate-card-desc">Classroom ideas and district strategy</span><span class="gate-go">Open guide &rarr;</span></button>
     </div>
   </div>
 </div>
@@ -377,7 +399,7 @@
 
 <!-- ============ COVER ============ -->
 <header class="hero">
-  <div class="herofig" aria-hidden="true"><img id="heroImg" alt="" style="width:100%;height:auto;display:block"></div>
+  <div class="herofig" aria-hidden="true"><img id="heroImg" alt="" src="assets/AttendeeGuide-hero.png" style="width:100%;height:auto;display:block"></div>
   <div class="hero-body">
     <p class="eyebrow" id="heroEyebrow">ATTENDEE GUIDE &middot; JULY 21&ndash;23, 2026</p>
     <h1 id="heroTitle">Your guide to<br>InstructureCon 2026</h1>
@@ -387,8 +409,7 @@
       <button class="btn btn-primary" id="printBtnC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Print or Save PDF</button>
       <button class="btn btn-ghost" id="offlineBtnC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg> Save offline copy</button>
     </div>
-    <p class="hint">Print or save a PDF for your bag, or keep an offline copy on your phone.</p>
-    <p class="hint">This guide updates online, so check back for the latest.</p>
+    <p class="hint">Print or save a PDF for your bag, or keep an offline copy on your phone. This guide updates online, so check back for the latest.</p>
 
 
   </div>
@@ -426,7 +447,7 @@
       <li>Set up your profile with your name, title, organization, and photo.</li>
       <li>Add your LinkedIn profile so other attendees can connect with you.</li>
       <li>Use the <strong>Networking</strong> tab for 1:1 messaging and networking.</li>
-      <li>If you don&rsquo;t already have a <strong>Networking</strong> account, the app will prompt you to join.</li>
+      <li>If you don&rsquo;t already have a Networking account, the app will prompt you to join.</li>
     </ol>
     <p class="muted">Not seeing InstructureCon 2026 in the app? Double check that you&rsquo;re using the email address you registered with, then uninstall and reinstall the app.</p>
     </div>
@@ -454,12 +475,12 @@
       </div>
       <div>
         <h3>Downtown travel</h3>
-        <p>The ongoing I-65 Central Corridor Project may impact travel times around downtown Louisville, especially during peak hours. Build in a little extra time if you&rsquo;re driving or using rideshare services.</p>
+        <p>The ongoing <a href="https://i65centralcorridor.com/#" target="_blank" rel="noopener">I-65 Central Corridor Project</a> may impact travel times around downtown Louisville, especially during peak hours. Build in a little extra time if you&rsquo;re driving or using rideshare services.</p>
         <p><strong>Here&rsquo;s the specific information:</strong></p>
         <p class="muted"><strong>Closure Location:</strong> Interstate 65 between Jefferson Street and Interstate 264 (Watterson Expressway)&mdash;this is the heavily used interstate for guests traveling to the Kentucky International Convention Center.<br>
         <strong>Closure date:</strong> June 1&ndash;July 31, 2026<br>
         <strong>Detours:</strong> I-65 traffic will be detoured using I-264 (Watterson Expressway) and Interstate 64, while on-ramps at Jefferson Street and Liberty Street/Muhammad Ali Boulevard will remain open.</p>
-        <a class="ph" id="mapDowntown" href="https://i65centralcorridor.com/#" aria-label="Open downtown map" style="aspect-ratio:16/7"><span class="tag" style="background:var(--blue)">MAP</span></a>
+        <a class="ph" id="mapDowntown" href="https://i65centralcorridor.com/#" target="_blank" rel="noopener" aria-label="Open downtown map" style="aspect-ratio:16/7"><span class="tag" style="background:var(--blue)">MAP</span></a>
       </div>
     </div>
     <div class="lou-cta">
@@ -534,12 +555,12 @@
     <div class="sec-card">
     <div class="party-grid">
       <div class="party">
-        <div class="top" style="background:var(--teal)"><div class="d">Tuesday</div><div class="t">6:00&ndash;9:00 pm</div></div>
-        <div class="bot"><div class="n">Opening Reception</div><div class="v">Kentucky International Convention Center Partner Hall</div><div class="dr" style="color:var(--teal)">Casual dress recommended.</div></div>
+        <div class="top" style="background:var(--teal-ink)"><div class="d">Tuesday</div><div class="t">6:00&ndash;9:00 pm</div></div>
+        <div class="bot"><div class="n">Opening Reception</div><div class="v">Kentucky International Convention Center Partner Hall</div><div class="dr" style="color:var(--teal-ink)">Casual dress recommended.</div></div>
       </div>
       <div class="party">
-        <div class="top" style="background:var(--amber)"><div class="d">Wednesday</div><div class="t">6:30&ndash;9:00 pm</div></div>
-        <div class="bot"><div class="n">Fourth Street Live!</div><div class="v">A short walk from the convention center and hotels.</div><div class="dr" style="color:var(--amber)">Casual dress recommended.</div></div>
+        <div class="top" style="background:var(--amber-ink)"><div class="d">Wednesday</div><div class="t">6:30&ndash;9:00 pm</div></div>
+        <div class="bot"><div class="n">Fourth Street Live!</div><div class="v">A short walk from the convention center and hotels.</div><div class="dr" style="color:var(--amber-ink)">Casual dress recommended.</div></div>
       </div>
       <div class="party">
         <div class="top" style="background:var(--crimson)"><div class="d">Thursday</div><div class="t">6:30&ndash;9:00 pm</div></div>
@@ -549,7 +570,7 @@
     <div class="card dark" style="margin-top:14px">
       <p class="kicker" style="color:var(--amber)">Shuttle information</p>
       <p style="margin:0 0 8px; color:#fff; font-size:14px">Shuttles will pick up attendees on 3rd Street between Market and Jefferson Streets, beneath the convention center skybridge on the Main Concourse level.</p>
-      <p style="margin:0; color:#fff; font-size:14px">First shuttle departs the convention center at <strong>5:30 pm</strong>.</p>
+      <p style="margin:0 0 6px; color:#fff; font-size:14px">First shuttle departs the convention center at <strong>5:30 pm</strong>.</p>
       <p style="margin:0; color:#fff; font-size:14px">First return shuttle departs Churchill Downs at <strong>7:30 pm</strong>.</p>
     </div>
     </div>
@@ -565,9 +586,10 @@
     <div class="sec-card">
     <p>Between the convention center, hotels, evening events, and partner experiences, there&rsquo;s a lot to explore. Be sure to check the venue and hotel maps before you arrive so you know where to go and how to get there.</p>
     <div class="map-grid">
-      <a class="ph" id="mapVenue" href="https://www.instructure.com/events/instructurecon/maps" aria-label="Open venue map"><span class="tag" style="background:var(--teal)">VENUE MAP</span></a>
-      <a class="ph" id="mapHotel" href="https://www.instructure.com/events/instructurecon/maps" aria-label="Open hotel map"><span class="tag" style="background:var(--blue)">HOTEL MAP</span></a>
+      <a class="ph" id="mapVenue" href="https://www.instructure.com/events/instructurecon/maps" target="_blank" rel="noopener" aria-label="Open venue map"><span class="tag" style="background:var(--teal-ink)">VENUE MAP</span></a>
+      <a class="ph" id="mapHotel" href="https://www.instructure.com/events/instructurecon/maps" target="_blank" rel="noopener" aria-label="Open hotel map"><span class="tag" style="background:var(--blue)">HOTEL MAP</span></a>
     </div>
+    <p style="margin-top:12px"><a class="link" href="https://www.instructure.com/events/instructurecon/maps" target="_blank" rel="noopener">&rarr; See all venue &amp; hotel maps</a></p>
     </div>
   </section>
 
@@ -626,7 +648,7 @@
     </div>
     <div class="sec-card">
     <p>Canvas Career is a skills-based learning platform built for professional learners. It&rsquo;s designed for organizations that need training tied to real job skills, not just compliance requirements.</p>
-    <p class="kicker" style="color:var(--green-dark)">Here&rsquo;s where to find it at InstructureCon</p>
+    <p class="kicker" style="color:var(--green-ink)">Here&rsquo;s where to find it at InstructureCon</p>
     <ul class="plain">
       <li><strong>Demo booth:</strong> Open all three days, July 21&ndash;23, with walkthroughs of Skillspace, the IgniteAI Agent, and the Admin Dashboard</li>
       <li><strong>Customer sessions:</strong> Teams using Canvas Career today, including USA Swimming and White&rsquo;s Chapel Methodist Church, will share how they&rsquo;re using it</li>
@@ -686,7 +708,7 @@
     <p>InstructureCon may last a few days, but the conversation doesn&rsquo;t end with the closing night party.</p>
     <p id="communityIntro">Think of the InstructureCon <a href="https://community.instructure.com/en/categories/instructurecon2026" target="_blank" rel="noopener">Community Hub</a> as the digital campus of the conference—a place to meet people before you arrive, find your people while you’re here, and keep the conversations going long after you head home.</p>
     <p>Need a restaurant recommendation? Looking for someone to grab coffee with before a session? Wondering whether Hack Night is for beginners? The Community (and our Community Coaches) have your back.</p>
-    <p class="kicker" style="color:var(--teal)">Inside the Hub, you&rsquo;ll find</p>
+    <p class="kicker" style="color:var(--teal-ink)">Inside the Hub, you&rsquo;ll find</p>
     <ul class="plain">
       <li><a href="https://community.instructure.com/en/discussion/666312/where-s-your-launch-point-join-the-instructurecon2026-map#latest" target="_blank" rel="noopener">Light Up the Map</a>: See where attendees are traveling from</li>
       <li>Details on <a href="https://community.instructure.com/en/discussion/666350/the-instructurecon-2026-unconference-where-the-best-conversations-keep-going#latest" target="_blank" rel="noopener">Unconference</a>, <a href="https://community.instructure.com/en/discussion/666134/hack-night-is-back-and-this-year-you-help-pick-what-we-build#latest" target="_blank" rel="noopener">Hack Night</a>, <a href="https://community.instructure.com/en/discussion/666544/instcon-game-night-2026-your-ticket-to-ride-louisville-kentucky#latest" target="_blank" rel="noopener">Game Night</a>, and <a href="https://community.instructure.com/en/discussion/666467/solo-but-not-alone-meet-the-other-solopandas#latest" target="_blank" rel="noopener">the Solo Pandas Meet Up</a></li>
@@ -750,11 +772,10 @@
 
 <script>
 (function(){
-  var ASSET_BASE="https://cdn.jsdelivr.net/gh/jefsop/instcon-guide-assets@main"; /* image host base, no trailing slash */
-  var HEROIMG=ASSET_BASE+"/AttendeeGuide-hero.png";
-  var NUMIMG={}; (function(){for(var b=1;b<=13;b++){var s=(""+b).length<2?("0"+b):(""+b);NUMIMG[b]=ASSET_BASE+"/section-number-"+s+".png";}})();
-  var BGIMG={welcome:ASSET_BASE+"/Welcome-BG.png",app:ASSET_BASE+"/App-BG.png",logistics:ASSET_BASE+"/Logistics-BG.png",meals:ASSET_BASE+"/Meals-BG.png",parties:ASSET_BASE+"/Parties-BG.png",maps:ASSET_BASE+"/Wayfinding-BG.png",involved:ASSET_BASE+"/GetInvolved-BG.png",ignite:ASSET_BASE+"/Ignite-BG.png",community:ASSET_BASE+"/Community-BG.png",before:ASSET_BASE+"/BeforeArrival-BG.png",filter:ASSET_BASE+"/Filter-BG.png","spotlight-bizgov":ASSET_BASE+"/Spotlight-BizGov-BG.png","spotlight-k12":ASSET_BASE+"/Spotlight-K12-BG.png",canvas:ASSET_BASE+"/Canvas-BG.png"};
-  var MAPIMG={mapDowntown:ASSET_BASE+"/map-downtown.png",mapVenue:ASSET_BASE+"/map-venue.png",mapHotel:ASSET_BASE+"/map-hotel.png"};
+  /* Static GitHub Pages build: images & links are baked into the HTML/CSS.
+     This script only powers the audience gate + the segment switcher. */
+  var NUMBASE="assets/section-number-";
+  var NUMIMG={}; (function(){for(var b=1;b<=13;b++){var s=(""+b).length<2?("0"+b):(""+b);NUMIMG[b]=NUMBASE+s+".png";}})();
 
   var SEG = {
     general:{
@@ -772,16 +793,16 @@
       welcome:"Whether you’re exploring new approaches to student success, thinking about the role of AI in higher education, or looking for practical ideas you can bring back to campus this fall, this guide will help you get ready for a great week.",
       resource:"Think of it as your one-stop resource for planning your schedule, navigating the conference, and making the most of your time at InstructureCon.",
       filterTarget:'To find higher education content:',
-      filterSelect:'Select Higher Education.',
+      filterSelect:'Select <strong>Higher Education</strong>.',
       community:"Think of the InstructureCon <a href='https://community.instructure.com/en/categories/instructurecon2026' target='_blank' rel='noopener'>Community Hub</a> as the digital campus of the conference—a place to meet people before you arrive, find your people while you’re here, and keep the conversations going long after you head home."
     },
     bizgov:{
       eyebrow:'BUSINESS &amp; GOVERNMENT · JULY 21–23, 2026',
-      title:'The business and <br>government guide to<br>InstructureCon 2026',
+      title:'The business<br>and government guide to<br>InstructureCon 2026',
       welcome:"Whether you’re exploring new approaches to workforce development, scaling training programs, improving learner engagement, or finding smarter ways to measure impact, this guide will help you get ready for a great week.",
       resource:"Think of it as your go-to prep resource for planning your schedule, navigating the conference, and making the most of your time at InstructureCon.",
       filterTarget:'To find Business, Government, or Non Profit content:',
-      filterSelect:'Select Business or Government, or Non Profit.',
+      filterSelect:'Select <strong>Business, Government, or Non Profit</strong>.',
       community:"Think of the InstructureCon <a href='https://community.instructure.com/en/categories/instructurecon2026' target='_blank' rel='noopener'>Community Hub</a> as the digital break room of the conference—a place to meet people before you arrive, find your people while you’re here, and keep the conversations going long after you head home."
     },
     k12:{
@@ -790,7 +811,7 @@
       welcome:"Whether you’re looking for practical classroom ideas, district-wide strategies, new ways to save time, or fresh approaches to supporting students and educators, this guide will help you get ready for a great week.",
       resource:"Think of it as your go-to prep resource for planning your schedule, navigating the conference, and making the most of your time at InstructureCon.",
       filterTarget:'To find K12 content:',
-      filterSelect:'Select K12.',
+      filterSelect:'Select <strong>K12</strong>.',
       community:"Think of the InstructureCon <a href='https://community.instructure.com/en/categories/instructurecon2026' target='_blank' rel='noopener'>Community Hub</a> as the digital faculty lounge of the conference—a place to meet people before you arrive, find your people while you’re here, and keep the conversations going long after you head home."
     }
   };
@@ -800,14 +821,6 @@
   function q(id){ return document.getElementById(id); }
   function setText(id,v){ var e=q(id); if(e && e.textContent!==v) e.textContent=v; }
   function setHTML(id,v){ var e=q(id); if(e && e.innerHTML!==v) e.innerHTML=v; }
-
-  function setImages(){
-    var hero=q('heroImg'); if(hero && hero.getAttribute('src')!==HEROIMG) hero.src=HEROIMG;
-    var secs=document.querySelectorAll('main > section');
-    for(var i=0;i<secs.length;i++){ var b=secs[i].querySelector('.sec-bg'); if(b && BGIMG[secs[i].id]){ var u='url("'+BGIMG[secs[i].id]+'")'; if(b.style.backgroundImage!==u) b.style.backgroundImage=u; } }
-    for(var k in MAPIMG){ var e=q(k); if(e){ var mu=MAPIMG[k]; if((e.style.backgroundImage||'').indexOf(mu)<0){ e.style.backgroundImage='url("'+mu+'")'; e.style.backgroundSize='cover'; e.style.backgroundPosition='center'; } if(e.getAttribute('href')!==mu){ e.setAttribute('href',mu); e.setAttribute('target','_blank'); e.setAttribute('rel','noopener'); } } }
-    var lou=q('louBg'); if(lou){ var lu=ASSET_BASE+"/Bourbon-BG.png"; if((lou.style.backgroundImage||'').indexOf(lu)<0) lou.style.backgroundImage='url("'+lu+'")'; }
-  }
 
   function applySegment(seg, record){
     if(!SEG[seg]) seg='general';
@@ -819,7 +832,7 @@
     var s=SEG[seg];
     setHTML('heroEyebrow', s.eyebrow); setHTML('heroTitle', s.title); setHTML('welcomeVary', s.welcome);
     setText('resourceLine', s.resource); setText('filterTarget', s.filterTarget);
-    var fsel=q('filterSelect'); if(fsel){ if(s.filterSelect){ if(fsel.textContent!==s.filterSelect) fsel.textContent=s.filterSelect; fsel.classList.remove('seg-off'); } else { fsel.classList.add('seg-off'); } }
+    var fsel=q('filterSelect'); if(fsel){ if(s.filterSelect){ if(fsel.innerHTML!==s.filterSelect) fsel.innerHTML=s.filterSelect; fsel.classList.remove('seg-off'); } else { fsel.classList.add('seg-off'); } }
     setHTML('communityIntro', s.community);
     setText('verFull', VFULL[seg]||'General'); setText('verShort', VSHORT[seg]||'General');
     var opts=document.querySelectorAll('.ver-opt[data-set]'); for(var k=0;k<opts.length;k++){ opts[k].classList.toggle('on', opts[k].getAttribute('data-set')===seg); }
@@ -836,23 +849,14 @@
 
   function setVer(open){ var vp=document.querySelector('.verpick'), vb=q('verBtn'); if(vp) vp.classList.toggle('open', open); if(vb) vb.setAttribute('aria-expanded', open?'true':'false'); }
   function setToc(open){ var toc=q('toc'), tb=q('tocBtn'); if(toc) toc.classList.toggle('open', open); if(tb) tb.setAttribute('aria-expanded', open?'true':'false'); }
-  function ensureGateOpen(){ var g=q('gate'); if(!g) return; if(getComputedStyle(g).display==='none'){ g.classList.remove('closing'); g.style.display='flex'; } if(!document.body.classList.contains('gated')) document.body.classList.add('gated'); }
+  function openGate(){ var g=q('gate'); if(!g) return; g.classList.remove('closing'); g.style.display='flex'; document.body.classList.add('gated'); }
   function closeGate(){ var g=q('gate'); document.body.classList.remove('gated'); if(g){ g.classList.add('closing'); g.style.display='none'; } }
   function saveOffline(){ try{ var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML; var blob=new Blob([html],{type:'text/html'}); var url=URL.createObjectURL(blob); var a=document.createElement('a'); a.href=url; a.download='InstructureCon-2026-Attendee-Guide.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url); }catch(err){ window.print(); } }
 
-  var chosen=null;
   function paramSeg(){ try{ var p=new URLSearchParams(location.search).get('segment'); return (p&&SEG[p])?p:null; }catch(e){ return null; } }
-  function choose(seg){ if(!SEG[seg]) return; chosen=seg; applySegment(seg, true); closeGate(); window.scrollTo(0,0); }
+  function choose(seg){ if(!SEG[seg]) return; applySegment(seg, true); closeGate(); window.scrollTo(0,0); }
 
-  function applyAll(){
-    if(!q('gate') || !document.querySelector('main > section')) return;
-    setImages();
-    var seg = chosen || paramSeg();
-    if(seg){ applySegment(seg, false); if(document.body.classList.contains('gated')) closeGate(); }
-    else { applySegment('general', false); ensureGateOpen(); }
-  }
-
-  // ---- interactions via delegation on document (survive hydration re-renders) ----
+  // ---- interactions ----
   document.addEventListener('click', function(e){
     var t=e.target; if(!t || !t.closest) return;
     var card=t.closest('.gate-card[data-set]'); if(card){ choose(card.getAttribute('data-set')); return; }
@@ -868,11 +872,13 @@
   });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ setToc(false); setVer(false); } });
 
-  // ---- run now, and re-assert until hydration settles, then stop ----
-  applyAll();
-  var ticks=0; var iv=setInterval(function(){ applyAll(); if(++ticks>48) clearInterval(iv); }, 250);
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', applyAll);
-  window.addEventListener('load', applyAll);
+  // ---- init: honor ?segment= deep links, otherwise show the gate ----
+  function init(){
+    var seg = paramSeg();
+    if(seg){ applySegment(seg, false); closeGate(); }
+    else { applySegment('general', false); openGate(); }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
 
 </script>
